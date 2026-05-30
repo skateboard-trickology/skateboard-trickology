@@ -1,0 +1,979 @@
+@prefix : <https://skateboard.ontology/tricks#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ===========================================================================
+# ONTOLOGY HEADER
+# ===========================================================================
+
+<https://skateboard.ontology/tricks>
+    a owl:Ontology ;
+    rdfs:label "Skateboarding Tricks Ontology" ;
+    rdfs:comment """
+        An OWL ontology for describing and classifying skateboarding tricks.
+        Supports atomic tricks, composite tricks, and trick execution by skaters.
+        Trick types are inferred by a reasoner based on structural properties,
+        rather than being manually asserted.
+    """ .
+
+
+# ===========================================================================
+# OBJECT PROPERTIES
+# ===========================================================================
+
+# --- Trick composition ---
+
+:hasTakeoffType
+    a owl:ObjectProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range :TakeoffType ;
+    rdfs:label "has takeoff type" ;
+    rdfs:comment "How the trick is initiated (ollie, nollie, no-comply, etc.)" .
+
+:hasLandingType
+    a owl:ObjectProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range :LandingType ;
+    rdfs:label "has landing type" ;
+    rdfs:comment "How the trick is completed (normal, revert, fakie out, manual out)." .
+
+:hasFlipComponent
+    a owl:ObjectProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range :FlipComponent ;
+    rdfs:label "has flip component" ;
+    rdfs:comment "A board-flip component of the trick (e.g. kickflip, heelflip, hardflip)." .
+
+:hasBoardSpinComponent
+    a owl:ObjectProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range :BoardSpinComponent ;
+    rdfs:label "has board spin component" ;
+    rdfs:comment "A board-rotation (shove-it) component of the trick." .
+
+:hasSkaterSpinComponent
+    a owl:ObjectProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range :SkaterSpinComponent ;
+    rdfs:label "has skater spin component" ;
+    rdfs:comment "A body-rotation component of the trick." .
+
+:hasGrindComponent
+    a owl:ObjectProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range :GrindComponent ;
+    rdfs:label "has grind component" ;
+    rdfs:comment "A grind or slide component of the trick." .
+
+:hasGrabComponent
+    a owl:ObjectProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range :GrabComponent ;
+    rdfs:label "has grab component" ;
+    rdfs:comment "A grab component of the trick." .
+
+:hasManualComponent
+    a owl:ObjectProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range :ManualComponent ;
+    rdfs:label "has manual component" ;
+    rdfs:comment "A manual/nose-manual balance component, used in trick combos." .
+
+:consistsOf
+    a owl:ObjectProperty ;
+    rdfs:domain :CompositeTrick ;
+    rdfs:range :Trick ;
+    rdfs:label "consists of" ;
+    rdfs:comment "Links a composite trick to its constituent atomic or sub-composite tricks." .
+
+# --- Component detail properties ---
+
+:hasFlipAxis
+    a owl:ObjectProperty ;
+    rdfs:domain :FlipComponent ;
+    rdfs:range :FlipAxis ;
+    rdfs:label "has flip axis" ;
+    rdfs:comment "The axis of board rotation: toeside (kickflip) or heelside (heelflip)." .
+
+:hasFlipInitiation
+    a owl:ObjectProperty ;
+    rdfs:domain :FlipComponent ;
+    rdfs:range :FlipInitiation ;
+    rdfs:label "has flip initiation" ;
+    rdfs:comment "How the flip is initiated: foot, hand (fingerflip), or tail." .
+
+:hasGrindType
+    a owl:ObjectProperty ;
+    rdfs:domain :GrindComponent ;
+    rdfs:range :GrindType ;
+    rdfs:label "has grind type" .
+
+:hasGrabType
+    a owl:ObjectProperty ;
+    rdfs:domain :GrabComponent ;
+    rdfs:range :GrabType ;
+    rdfs:label "has grab type" .
+
+:hasGrabHand
+    a owl:ObjectProperty ;
+    rdfs:domain :GrabComponent ;
+    rdfs:range :Hand ;
+    rdfs:label "has grab hand" .
+
+:hasManualType
+    a owl:ObjectProperty ;
+    rdfs:domain :ManualComponent ;
+    rdfs:range :ManualType ;
+    rdfs:label "has manual type" ;
+    rdfs:comment "Regular manual (back wheels) or nose manual (front wheels)." .
+
+:hasDirection
+    a owl:ObjectProperty ;
+    rdfs:comment "Frontside or backside direction, applies to spins, grinds, and grabs." ;
+    rdfs:range :Direction ;
+    rdfs:label "has direction" .
+
+:hasStance
+    a owl:ObjectProperty ;
+    rdfs:domain :TrickExecution ;
+    rdfs:range :Stance ;
+    rdfs:label "has stance" ;
+    rdfs:comment "The skater's stance at the time of trick execution." .
+
+:hasTerrain
+    a owl:ObjectProperty ;
+    rdfs:domain :TrickExecution ;
+    rdfs:range :Terrain ;
+    rdfs:label "has terrain" ;
+    rdfs:comment "The terrain context in which the trick was performed." .
+
+:performedBy
+    a owl:ObjectProperty ;
+    rdfs:domain :TrickExecution ;
+    rdfs:range :Skater ;
+    rdfs:label "performed by" .
+
+:executionOf
+    a owl:ObjectProperty ;
+    rdfs:domain :TrickExecution ;
+    rdfs:range :Trick ;
+    rdfs:label "execution of" ;
+    rdfs:comment "Links a specific execution event to the abstract trick being performed." .
+
+
+# ===========================================================================
+# DATA PROPERTIES
+# ===========================================================================
+
+:hasName
+    a owl:DatatypeProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range xsd:string ;
+    rdfs:label "has name" ;
+    rdfs:comment "Canonical technical name of the trick." .
+
+:hasPopularName
+    a owl:DatatypeProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range xsd:string ;
+    rdfs:label "has popular name" ;
+    rdfs:comment "Colloquial or street name (e.g. 'tres flip' for 360 kickflip)." .
+
+:inventedBy
+    a owl:DatatypeProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range xsd:string ;
+    rdfs:label "invented by" .
+
+:inventedYear
+    a owl:DatatypeProperty ;
+    rdfs:domain :Trick ;
+    rdfs:range xsd:integer ;
+    rdfs:label "invented year" .
+
+:boardflipRotations
+    a owl:DatatypeProperty ;
+    rdfs:domain :FlipComponent ;
+    rdfs:range xsd:integer ;
+    rdfs:label "board flip rotations" ;
+    rdfs:comment "Number of full flip rotations (1 = single flip, 2 = double flip, etc.)." .
+
+:skaterSpinDegrees
+    a owl:DatatypeProperty ;
+    rdfs:domain :SkaterSpinComponent ;
+    rdfs:range xsd:integer ;
+    rdfs:label "skater spin degrees" ;
+    rdfs:comment "Degrees of skater body rotation: 180, 360, 540, 720, 900, 1080, 1260." .
+
+:boardSpinDegrees
+    a owl:DatatypeProperty ;
+    rdfs:domain :BoardSpinComponent ;
+    rdfs:range xsd:integer ;
+    rdfs:label "board spin degrees" ;
+    rdfs:comment "Degrees of board varial/shove-it rotation: 180, 360, etc." .
+
+:skaterName
+    a owl:DatatypeProperty ;
+    rdfs:domain :Skater ;
+    rdfs:range xsd:string ;
+    rdfs:label "skater name" .
+
+:executionDate
+    a owl:DatatypeProperty ;
+    rdfs:domain :TrickExecution ;
+    rdfs:range xsd:date ;
+    rdfs:label "execution date" .
+
+:executionLocation
+    a owl:DatatypeProperty ;
+    rdfs:domain :TrickExecution ;
+    rdfs:range xsd:string ;
+    rdfs:label "execution location" .
+
+
+# ===========================================================================
+# CLASSES — CORE
+# ===========================================================================
+
+:Trick
+    a owl:Class ;
+    rdfs:label "Trick" ;
+    rdfs:comment "Abstract representation of a skateboarding trick. A trick is defined by its components, not by any particular execution." .
+
+:AtomicTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "Atomic Trick" ;
+    rdfs:comment "A single, indivisible trick. Cannot be decomposed into simpler tricks." .
+
+:CompositeTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :consistsOf ;
+              owl:minCardinality 2 ]
+        )
+    ] ;
+    rdfs:label "Composite Trick" ;
+    rdfs:comment "A trick composed of two or more constituent tricks (e.g. kickflip nosegrind, 360 flip to manual)." .
+
+:TrickExecution
+    a owl:Class ;
+    rdfs:label "Trick Execution" ;
+    rdfs:comment "A specific real-world instance of a trick being performed by a skater, at a location, with a stance." .
+
+:Skater
+    a owl:Class ;
+    rdfs:label "Skater" .
+
+
+# ===========================================================================
+# CLASSES — INFERRED TRICK TYPES
+# These classes use OWL defined-class semantics so a reasoner
+# can automatically classify tricks into these types.
+# ===========================================================================
+
+:FlipTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :hasFlipComponent ;
+              owl:someValuesFrom :FlipComponent ]
+        )
+    ] ;
+    rdfs:label "Flip Trick" ;
+    rdfs:comment "Inferred: any trick with a flip component. Includes kickflip, heelflip, hardflip, etc." .
+
+:ShoveItTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :hasBoardSpinComponent ;
+              owl:someValuesFrom :BoardSpinComponent ]
+            [ a owl:Restriction ;
+              owl:onProperty :hasFlipComponent ;
+              owl:maxCardinality 0 ]
+        )
+    ] ;
+    rdfs:label "Shove-It Trick" ;
+    rdfs:comment "Inferred: board spins without a flip component." .
+
+:GrindTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :hasGrindComponent ;
+              owl:someValuesFrom :GrindComponent ]
+        )
+    ] ;
+    rdfs:label "Grind / Slide Trick" ;
+    rdfs:comment "Inferred: any trick with a grind or slide component." .
+
+:GrabTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :hasGrabComponent ;
+              owl:someValuesFrom :GrabComponent ]
+        )
+    ] ;
+    rdfs:label "Grab Trick" ;
+    rdfs:comment "Inferred: any trick with a grab component." .
+
+:AirTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :hasSkaterSpinComponent ;
+              owl:someValuesFrom :SkaterSpinComponent ]
+            [ a owl:Restriction ;
+              owl:onProperty :hasGrindComponent ;
+              owl:maxCardinality 0 ]
+        )
+    ] ;
+    rdfs:label "Air Trick" ;
+    rdfs:comment "Inferred: skater spins in the air without grinding." .
+
+:ManualTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :hasManualComponent ;
+              owl:someValuesFrom :ManualComponent ]
+        )
+    ] ;
+    rdfs:label "Manual / Balance Trick" ;
+    rdfs:comment "Inferred: trick involves a manual or nose-manual balance component." .
+
+:OllieBasedTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :hasTakeoffType ;
+              owl:hasValue :Ollie ]
+        )
+    ] ;
+    rdfs:label "Ollie-Based Trick" ;
+    rdfs:comment "Inferred: trick uses an ollie as the takeoff." .
+
+:NollieBasedTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :hasTakeoffType ;
+              owl:hasValue :Nollie ]
+        )
+    ] ;
+    rdfs:label "Nollie-Based Trick" ;
+    rdfs:comment "Inferred: trick uses a nollie as the takeoff." .
+
+:NonOllieTrick
+    a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Trick
+            [ a owl:Restriction ;
+              owl:onProperty :hasTakeoffType ;
+              owl:someValuesFrom [
+                  a owl:Class ;
+                  owl:complementOf :OllieTakeoff
+              ] ]
+        )
+    ] ;
+    rdfs:label "Non-Ollie Trick" ;
+    rdfs:comment "Inferred: trick does not require an ollie (no-comply, boneless, caveman, acid drop, etc.)." .
+
+:FingerflipTrick
+    a owl:Class ;
+    rdfs:subClassOf :FlipTrick ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            :FlipTrick
+            [ a owl:Restriction ;
+              owl:onProperty :hasFlipComponent ;
+              owl:someValuesFrom [
+                  a owl:Class ;
+                  owl:intersectionOf (
+                      :FlipComponent
+                      [ a owl:Restriction ;
+                        owl:onProperty :hasFlipInitiation ;
+                        owl:hasValue :HandInitiation ]
+                  )
+              ] ]
+        )
+    ] ;
+    rdfs:label "Fingerflip Trick" ;
+    rdfs:comment "Inferred: a flip trick initiated with the hand. Subclass of FlipTrick." .
+
+
+# ===========================================================================
+# CLASSES — COMPONENTS
+# ===========================================================================
+
+:FlipComponent
+    a owl:Class ;
+    rdfs:label "Flip Component" ;
+    rdfs:comment "Describes a board-flip (around the board's long axis or diagonal). E.g. kickflip, heelflip." .
+
+:BoardSpinComponent
+    a owl:Class ;
+    rdfs:label "Board Spin Component" ;
+    rdfs:comment "Describes board rotation around the vertical axis (shove-it / varial spin)." .
+
+:SkaterSpinComponent
+    a owl:Class ;
+    rdfs:label "Skater Spin Component" ;
+    rdfs:comment "Describes the skater's body rotation during the trick." .
+
+:GrindComponent
+    a owl:Class ;
+    rdfs:label "Grind Component" ;
+    rdfs:comment "Describes a grind or slide on a surface (rail, ledge, coping, etc.)." .
+
+:GrabComponent
+    a owl:Class ;
+    rdfs:label "Grab Component" ;
+    rdfs:comment "Describes grabbing the board with a hand during the trick." .
+
+:ManualComponent
+    a owl:Class ;
+    rdfs:label "Manual Component" ;
+    rdfs:comment "Describes a manual or nose-manual balance." .
+
+
+# ===========================================================================
+# CLASSES — ENUMERATIONS (as OWL Named Individuals)
+# ===========================================================================
+
+# --- Takeoff Type ---
+
+:TakeoffType
+    a owl:Class ;
+    rdfs:label "Takeoff Type" ;
+    owl:oneOf (
+        :Ollie :Nollie :NoComply :Boneless :Caveman :AcidDrop
+        :PushPull :Hippie :Manual :PaddleIn
+    ) .
+
+:OllieTakeoff
+    a owl:Class ;
+    rdfs:subClassOf :TakeoffType ;
+    owl:equivalentClass [ owl:oneOf ( :Ollie :Nollie ) ] ;
+    rdfs:comment "Superclass for ollie-based takeoffs (front foot or back foot pop)." .
+
+:Ollie       a :TakeoffType ; rdfs:label "Ollie" .
+:Nollie      a :TakeoffType ; rdfs:label "Nollie" ;
+             rdfs:comment "Pop off the nose (front truck bolts), mirror of ollie." .
+:NoComply    a :TakeoffType ; rdfs:label "No-Comply" ;
+             rdfs:comment "Front foot steps off, back foot pops the tail." .
+:Boneless    a :TakeoffType ; rdfs:label "Boneless" ;
+             rdfs:comment "Front foot steps off, front hand grabs, back foot pops." .
+:Caveman     a :TakeoffType ; rdfs:label "Caveman" ;
+             rdfs:comment "Board held in hand, skater jumps and lands on it." .
+:AcidDrop    a :TakeoffType ; rdfs:label "Acid Drop" ;
+             rdfs:comment "Skater rolls off an edge without popping; no ollie." .
+:PushPull    a :TakeoffType ; rdfs:label "Push-Pull" .
+:Hippie      a :TakeoffType ; rdfs:label "Hippie Jump" ;
+             rdfs:comment "Skater jumps over an obstacle while board rolls under." .
+:Manual      a :TakeoffType ; rdfs:label "Manual Entry" .
+:PaddleIn    a :TakeoffType ; rdfs:label "Paddle In" ;
+             rdfs:comment "Drop-in from coping, ramp context." .
+
+
+# --- Landing Type ---
+
+:LandingType
+    a owl:Class ;
+    rdfs:label "Landing Type" ;
+    owl:oneOf ( :NormalLanding :Revert :FakieOut :ManualOut :NoseManualOut :PivotOut ) .
+
+:NormalLanding  a :LandingType ; rdfs:label "Normal Landing" .
+:Revert         a :LandingType ; rdfs:label "Revert" ;
+                rdfs:comment "180-degree pivot on landing to end in fakie." .
+:FakieOut       a :LandingType ; rdfs:label "Fakie Out" .
+:ManualOut      a :LandingType ; rdfs:label "Manual Out" ;
+                rdfs:comment "Lands in manual balance and rolls out." .
+:NoseManualOut  a :LandingType ; rdfs:label "Nose Manual Out" .
+:PivotOut       a :LandingType ; rdfs:label "Pivot Out" .
+
+
+# --- Flip Axis ---
+
+:FlipAxis
+    a owl:Class ;
+    rdfs:label "Flip Axis" ;
+    owl:oneOf ( :ToeAxis :HeelAxis ) .
+
+:ToeAxis  a :FlipAxis ; rdfs:label "Toeside Axis" ;
+          rdfs:comment "Board flips towards the toes: kickflip, hardflip." .
+:HeelAxis a :FlipAxis ; rdfs:label "Heelside Axis" ;
+          rdfs:comment "Board flips towards the heel: heelflip, inward heel." .
+
+
+# --- Flip Initiation ---
+
+:FlipInitiation
+    a owl:Class ;
+    rdfs:label "Flip Initiation" ;
+    owl:oneOf ( :FootInitiation :HandInitiation :TailInitiation ) .
+
+:FootInitiation a :FlipInitiation ; rdfs:label "Foot" ;
+                rdfs:comment "Standard flip initiated by the front foot flicking." .
+:HandInitiation a :FlipInitiation ; rdfs:label "Hand" ;
+                rdfs:comment "Fingerflip: board is flipped with the hand." .
+:TailInitiation a :FlipInitiation ; rdfs:label "Tail" ;
+                rdfs:comment "Flip initiated off the tail (e.g. pressure flip)." .
+
+
+# --- Direction ---
+
+:Direction
+    a owl:Class ;
+    rdfs:label "Direction" ;
+    owl:oneOf ( :Frontside :Backside :None ) .
+
+:Frontside a :Direction ; rdfs:label "Frontside" ;
+           rdfs:comment "Chest faces the obstacle or direction of rotation." .
+:Backside  a :Direction ; rdfs:label "Backside" ;
+           rdfs:comment "Back faces the obstacle or direction of rotation." .
+:None      a :Direction ; rdfs:label "No Direction" ;
+           rdfs:comment "Direction is not applicable (e.g. straight ollie)." .
+
+
+# --- Grind Type ---
+
+:GrindType
+    a owl:Class ;
+    rdfs:label "Grind Type" ;
+    owl:oneOf (
+        :FiftyFifty :FiveO :NoseGrind :CrookedGrind
+        :FeebleGrind :SmithGrind :OvercrokedGrind :SaladeGrind
+        :WillyGrind :NoseSlide :TailSlide :BluntSlide
+        :NoseBluntSlide :CrailSlide :LipSlide :Boardslide
+        :Switchboardslide :PivotFakie :AxleStall
+    ) .
+
+:FiftyFifty       a :GrindType ; rdfs:label "50-50" ;
+                  rdfs:comment "Both trucks grind the obstacle." .
+:FiveO            a :GrindType ; rdfs:label "5-0" ;
+                  rdfs:comment "Back truck only grinds the obstacle." .
+:NoseGrind        a :GrindType ; rdfs:label "Nose Grind" ;
+                  rdfs:comment "Front truck only grinds the obstacle." .
+:CrookedGrind     a :GrindType ; rdfs:label "Crooked Grind" ;
+                  rdfs:comment "Front truck grinds at an angle, nose over the obstacle." .
+:FeebleGrind      a :GrindType ; rdfs:label "Feeble Grind" ;
+                  rdfs:comment "Back truck grinds, front truck hangs over on the far side." .
+:SmithGrind       a :GrindType ; rdfs:label "Smith Grind" ;
+                  rdfs:comment "Back truck grinds, front truck hangs on the near side." .
+:OvercrokedGrind  a :GrindType ; rdfs:label "Overcroked Grind" .
+:SaladeGrind      a :GrindType ; rdfs:label "Salade Grind" .
+:WillyGrind       a :GrindType ; rdfs:label "Willy Grind" .
+:NoseSlide        a :GrindType ; rdfs:label "Nose Slide" ;
+                  rdfs:comment "Nose of the board slides along the obstacle." .
+:TailSlide        a :GrindType ; rdfs:label "Tail Slide" ;
+                  rdfs:comment "Tail of the board slides along the obstacle." .
+:BluntSlide       a :GrindType ; rdfs:label "Blunt Slide" ;
+                  rdfs:comment "Tail hangs off the backside of the obstacle, truck slides." .
+:NoseBluntSlide   a :GrindType ; rdfs:label "Nose Blunt Slide" .
+:CrailSlide       a :GrindType ; rdfs:label "Crail Slide" .
+:LipSlide         a :GrindType ; rdfs:label "Lip Slide" ;
+                  rdfs:comment "Board slides with the middle section over the obstacle." .
+:Boardslide       a :GrindType ; rdfs:label "Boardslide" ;
+                  rdfs:comment "Board perpendicular to obstacle, middle section slides." .
+:Switchboardslide a :GrindType ; rdfs:label "Switch Boardslide" .
+:PivotFakie       a :GrindType ; rdfs:label "Pivot Fakie" ;
+                  rdfs:comment "Front truck stalls on coping then pivots out fakie." .
+:AxleStall        a :GrindType ; rdfs:label "Axle Stall" ;
+                  rdfs:comment "Both trucks stall on coping (ramp/vert context)." .
+
+
+# --- Grab Type ---
+
+:GrabType
+    a owl:Class ;
+    rdfs:label "Grab Type" ;
+    owl:oneOf (
+        :Indy :Mute :Melon :Stalefish :Tail :Nose
+        :Crossbone :JapAir :OldSchool :Crail :Seatbelt :ToeJam
+    ) .
+
+:Indy       a :GrabType ; rdfs:label "Indy" ;
+            rdfs:comment "Trailing hand grabs the toeside of the board between the trucks." .
+:Mute       a :GrabType ; rdfs:label "Mute" ;
+            rdfs:comment "Leading hand grabs the toeside between the trucks." .
+:Melon      a :GrabType ; rdfs:label "Melon" ;
+            rdfs:comment "Leading hand grabs the heelside between the trucks." .
+:Stalefish  a :GrabType ; rdfs:label "Stalefish" ;
+            rdfs:comment "Trailing hand grabs the heelside behind the back foot." .
+:Tail       a :GrabType ; rdfs:label "Tail Grab" ;
+            rdfs:comment "Trailing hand grabs the tail of the board." .
+:Nose       a :GrabType ; rdfs:label "Nose Grab" ;
+            rdfs:comment "Leading hand grabs the nose of the board." .
+:Crossbone  a :GrabType ; rdfs:label "Crossbone" .
+:JapAir     a :GrabType ; rdfs:label "Jap Air" ;
+            rdfs:comment "Leading hand grabs the nose, front leg kicked out." .
+:OldSchool  a :GrabType ; rdfs:label "Old School" .
+:Crail      a :GrabType ; rdfs:label "Crail" ;
+            rdfs:comment "Trailing hand grabs the nose." .
+:Seatbelt   a :GrabType ; rdfs:label "Seatbelt" .
+:ToeJam     a :GrabType ; rdfs:label "Toe Jam" .
+
+
+# --- Hand ---
+
+:Hand
+    a owl:Class ;
+    rdfs:label "Hand" ;
+    owl:oneOf ( :LeadingHand :TrailingHand ) .
+
+:LeadingHand  a :Hand ; rdfs:label "Leading Hand" ;
+              rdfs:comment "The hand on the front/nose side (left for regular, right for goofy)." .
+:TrailingHand a :Hand ; rdfs:label "Trailing Hand" ;
+              rdfs:comment "The hand on the back/tail side." .
+
+
+# --- Manual Type ---
+
+:ManualType
+    a owl:Class ;
+    rdfs:label "Manual Type" ;
+    owl:oneOf ( :RegularManual :NoseManual :CasperManual ) .
+
+:RegularManual a :ManualType ; rdfs:label "Manual" ;
+               rdfs:comment "Balancing on the back two wheels." .
+:NoseManual    a :ManualType ; rdfs:label "Nose Manual" ;
+               rdfs:comment "Balancing on the front two wheels." .
+:CasperManual  a :ManualType ; rdfs:label "Casper Manual" ;
+               rdfs:comment "Balancing on the edge of the tail with the board flipped upside-down." .
+
+
+# --- Stance ---
+
+:Stance
+    a owl:Class ;
+    rdfs:label "Stance" ;
+    owl:oneOf ( :Normal :Switch :Fakie :Nollie ) .
+
+:Normal  a :Stance ; rdfs:label "Normal" ;
+         rdfs:comment "The skater's natural riding stance." .
+:Switch  a :Stance ; rdfs:label "Switch" ;
+         rdfs:comment "Opposite of the skater's natural stance." .
+:Fakie   a :Stance ; rdfs:label "Fakie" ;
+         rdfs:comment "Natural stance but rolling backwards." .
+:Nollie  a :Stance ; rdfs:label "Nollie" ;
+         rdfs:comment "Natural stance, trick initiated off the nose." .
+
+
+# --- Terrain ---
+
+:Terrain
+    a owl:Class ;
+    rdfs:label "Terrain" ;
+    owl:oneOf ( :Street :Transition :Vert :Flatground :Park :Pool :Miniramp :Quarterpipe ) .
+
+:Street      a :Terrain ; rdfs:label "Street" .
+:Transition  a :Terrain ; rdfs:label "Transition / Ramp" .
+:Vert        a :Terrain ; rdfs:label "Vert" .
+:Flatground  a :Terrain ; rdfs:label "Flatground" .
+:Park        a :Terrain ; rdfs:label "Park" .
+:Pool        a :Terrain ; rdfs:label "Pool / Bowl" .
+:Miniramp    a :Terrain ; rdfs:label "Miniramp" .
+:Quarterpipe a :Terrain ; rdfs:label "Quarterpipe" .
+
+
+# ===========================================================================
+# EXAMPLE INDIVIDUALS — TRICKS
+# Demonstrating how the ontology is used to describe specific tricks.
+# A reasoner will automatically infer the correct type classes.
+# ===========================================================================
+
+# --- Kickflip ---
+:kickflip
+    a :AtomicTrick ;
+    :hasName "Kickflip" ;
+    :inventedBy "Rodney Mullen" ;
+    :inventedYear 1983 ;
+    :hasTakeoffType :Ollie ;
+    :hasLandingType :NormalLanding ;
+    :hasFlipComponent [
+        a :FlipComponent ;
+        :hasFlipAxis :ToeAxis ;
+        :hasFlipInitiation :FootInitiation ;
+        :boardflipRotations 1
+    ] .
+# → Inferred: OllieBasedTrick, FlipTrick
+
+# --- Heelflip ---
+:heelflip
+    a :AtomicTrick ;
+    :hasName "Heelflip" ;
+    :hasTakeoffType :Ollie ;
+    :hasLandingType :NormalLanding ;
+    :hasFlipComponent [
+        a :FlipComponent ;
+        :hasFlipAxis :HeelAxis ;
+        :hasFlipInitiation :FootInitiation ;
+        :boardflipRotations 1
+    ] .
+
+# --- Hardflip ---
+:hardflip
+    a :AtomicTrick ;
+    :hasName "Hardflip" ;
+    rdfs:comment "Frontside pop-shove-it combined with a kickflip, creating an inward flip motion." ;
+    :hasTakeoffType :Ollie ;
+    :hasLandingType :NormalLanding ;
+    :hasFlipComponent [
+        a :FlipComponent ;
+        :hasFlipAxis :ToeAxis ;
+        :hasFlipInitiation :FootInitiation ;
+        :boardflipRotations 1
+    ] ;
+    :hasBoardSpinComponent [
+        a :BoardSpinComponent ;
+        :boardSpinDegrees 180 ;
+        :hasDirection :Frontside
+    ] .
+# → Inferred: FlipTrick, OllieBasedTrick
+
+# --- Inward Heel ---
+:inwardHeel
+    a :AtomicTrick ;
+    :hasName "Inward Heel" ;
+    rdfs:comment "Backside pop-shove-it combined with a heelflip." ;
+    :hasTakeoffType :Ollie ;
+    :hasFlipComponent [
+        a :FlipComponent ;
+        :hasFlipAxis :HeelAxis ;
+        :hasFlipInitiation :FootInitiation ;
+        :boardflipRotations 1
+    ] ;
+    :hasBoardSpinComponent [
+        a :BoardSpinComponent ;
+        :boardSpinDegrees 180 ;
+        :hasDirection :Backside
+    ] .
+
+# --- 360 Kickflip (Tre Flip / 3 Flip) ---
+:treFlip
+    a :AtomicTrick ;
+    :hasName "360 Kickflip" ;
+    :hasPopularName "Tre Flip" ;
+    :inventedBy "Rodney Mullen" ;
+    :hasTakeoffType :Ollie ;
+    :hasLandingType :NormalLanding ;
+    :hasFlipComponent [
+        a :FlipComponent ;
+        :hasFlipAxis :ToeAxis ;
+        :hasFlipInitiation :FootInitiation ;
+        :boardflipRotations 1
+    ] ;
+    :hasBoardSpinComponent [
+        a :BoardSpinComponent ;
+        :boardSpinDegrees 360 ;
+        :hasDirection :Backside
+    ] .
+
+# --- Varial Kickflip ---
+:varialKickflip
+    a :AtomicTrick ;
+    :hasName "Varial Kickflip" ;
+    :hasTakeoffType :Ollie ;
+    :hasFlipComponent [
+        a :FlipComponent ;
+        :hasFlipAxis :ToeAxis ;
+        :hasFlipInitiation :FootInitiation ;
+        :boardflipRotations 1
+    ] ;
+    :hasBoardSpinComponent [
+        a :BoardSpinComponent ;
+        :boardSpinDegrees 180 ;
+        :hasDirection :Backside
+    ] .
+
+# --- Ollie ---
+:ollie
+    a :AtomicTrick ;
+    :hasName "Ollie" ;
+    :inventedBy "Alan Gelfand" ;
+    :inventedYear 1978 ;
+    :hasTakeoffType :Ollie ;
+    :hasLandingType :NormalLanding .
+# → Inferred: OllieBasedTrick (no flip, no grind, no spin → plain ollie)
+
+# --- Backside 180 ---
+:backside180
+    a :AtomicTrick ;
+    :hasName "Backside 180" ;
+    :hasTakeoffType :Ollie ;
+    :hasLandingType :FakieOut ;
+    :hasSkaterSpinComponent [
+        a :SkaterSpinComponent ;
+        :skaterSpinDegrees 180 ;
+        :hasDirection :Backside
+    ] .
+# → Inferred: AirTrick, OllieBasedTrick
+
+# --- Kickflip Backside 50-50 (Composite) ---
+:kickflipBacksideFiftyFifty
+    a :CompositeTrick ;
+    :hasName "Kickflip Backside 50-50" ;
+    :consistsOf :kickflip ;
+    :consistsOf :backsideFiftyFifty ;
+    :hasTakeoffType :Ollie ;
+    :hasFlipComponent [
+        a :FlipComponent ;
+        :hasFlipAxis :ToeAxis ;
+        :hasFlipInitiation :FootInitiation ;
+        :boardflipRotations 1
+    ] ;
+    :hasGrindComponent [
+        a :GrindComponent ;
+        :hasGrindType :FiftyFifty ;
+        :hasDirection :Backside
+    ] .
+
+# --- Backside 50-50 ---
+:backsideFiftyFifty
+    a :AtomicTrick ;
+    :hasName "Backside 50-50" ;
+    :hasTakeoffType :Ollie ;
+    :hasGrindComponent [
+        a :GrindComponent ;
+        :hasGrindType :FiftyFifty ;
+        :hasDirection :Backside
+    ] .
+# → Inferred: GrindTrick
+
+# --- Indy Grab ---
+:indyGrab
+    a :AtomicTrick ;
+    :hasName "Indy" ;
+    :hasTakeoffType :Ollie ;
+    :hasGrabComponent [
+        a :GrabComponent ;
+        :hasGrabType :Indy ;
+        :hasGrabHand :TrailingHand
+    ] .
+# → Inferred: GrabTrick
+
+# --- No-Comply ---
+:noComply
+    a :AtomicTrick ;
+    :hasName "No-Comply" ;
+    :hasTakeoffType :NoComply ;
+    :hasLandingType :NormalLanding .
+# → Inferred: NonOllieTrick
+
+# --- Acid Drop ---
+:acidDrop
+    a :AtomicTrick ;
+    :hasName "Acid Drop" ;
+    :hasTakeoffType :AcidDrop ;
+    :hasLandingType :NormalLanding ;
+    rdfs:comment "Rolls off an elevated surface without popping. No ollie involved." .
+
+# --- Fingerflip ---
+:fingerflip
+    a :AtomicTrick ;
+    :hasName "Fingerflip" ;
+    :hasTakeoffType :Ollie ;
+    :hasFlipComponent [
+        a :FlipComponent ;
+        :hasFlipAxis :ToeAxis ;
+        :hasFlipInitiation :HandInitiation ;
+        :boardflipRotations 1
+    ] .
+# → Inferred: FlipTrick, FingerflipTrick, OllieBasedTrick
+
+# --- Manual ---
+:manualTrick
+    a :AtomicTrick ;
+    :hasName "Manual" ;
+    :hasTakeoffType :Ollie ;
+    :hasManualComponent [
+        a :ManualComponent ;
+        :hasManualType :RegularManual
+    ] .
+# → Inferred: ManualTrick
+
+# --- Double Kickflip ---
+:doubleKickflip
+    a :AtomicTrick ;
+    :hasName "Double Kickflip" ;
+    :hasTakeoffType :Ollie ;
+    :hasFlipComponent [
+        a :FlipComponent ;
+        :hasFlipAxis :ToeAxis ;
+        :hasFlipInitiation :FootInitiation ;
+        :boardflipRotations 2
+    ] .
+
+# --- 900 (Two and a half rotations) ---
+:nineHundred
+    a :AtomicTrick ;
+    :hasName "900" ;
+    :inventedBy "Tony Hawk" ;
+    :inventedYear 1999 ;
+    :hasTakeoffType :PaddleIn ;
+    :hasSkaterSpinComponent [
+        a :SkaterSpinComponent ;
+        :skaterSpinDegrees 900 ;
+        :hasDirection :Backside
+    ] .
+# → Inferred: AirTrick
+
+# --- Example TrickExecution ---
+:nyjahHustonKickflip2024
+    a :TrickExecution ;
+    :executionOf :kickflip ;
+    :performedBy [
+        a :Skater ;
+        :skaterName "Nyjah Huston"
+    ] ;
+    :hasStance :Normal ;
+    :hasTerrain :Street ;
+    :executionDate "2024-08-01"^^xsd:date ;
+    :executionLocation "Los Angeles, CA" .
+
