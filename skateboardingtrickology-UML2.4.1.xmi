@@ -1,38 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?><uml:Model xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="_qswisFx1EfGe1epplsTXtw" name="skateboardingtrickology">
+<?xml version="1.0" encoding="UTF-8"?><uml:Model xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="_3ofYgIYmEfG7lISgwFsiWA" name="skateboardingtrickology">
       
-    <eAnnotations xmi:id="_qswisVx1EfGe1epplsTXtw" source="Objing">
+    <eAnnotations xmi:id="_3ofYgYYmEfG7lISgwFsiWA" source="Objing">
             
-        <contents xmi:type="uml:Property" xmi:id="_qswislx1EfGe1epplsTXtw" name="exporterVersion">
+        <contents xmi:type="uml:Property" xmi:id="_3ofYgoYmEfG7lISgwFsiWA" name="exporterVersion">
                   
-            <defaultValue xmi:type="uml:LiteralString" xmi:id="_qswis1x1EfGe1epplsTXtw" value="3.0.0"/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_3ofYg4YmEfG7lISgwFsiWA" value="3.0.0"/>
                 
         </contents>
           
     </eAnnotations>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qswitFx1EfGe1epplsTXtw" name="Trick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofYhIYmEfG7lISgwFsiWA" name="Trick">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qswitVx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofYhYYmEfG7lISgwFsiWA">
                   
-            <body>What about a varial? &#13;
-&#13;
-Frontside air varial&#13;
-&#13;
-540 body varial - body spins 540 - board spins 360 &#13;
-&#13;
+            <body>What about a varial? 
+
+Frontside air varial
+
+540 body varial - body spins 540 - board spins 360 
+
 </body>
                 
         </ownedComment>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswitlx1EfGe1epplsTXtw" name="name" visibility="public" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofYhoYmEfG7lISgwFsiWA">
+                  
+            <body>Krevende med skillet buer og street. Noen trick er street tricks. 
+
+Men hva med no comply tail slide på mini eller vert? 
+
+Det er er en takeOff-type? Bucky lazek gjør frontside no complies på vert. 
+
+Step off? Sikert flere vert-varianter? 
+
+Terrain type er transition. Men trickset er det samme. No comply tail slide. Kan gjøres på både i buer og på curbs. Same med Nosepick. 
+
+Og CurbAndLiptricks. </body>
+                
+        </ownedComment>
+            
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYh4YmEfG7lISgwFsiWA" name="name" visibility="public" isUnique="false">
                   
             <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswit1x1EfGe1epplsTXtw" name="popularName" visibility="public" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYiIYmEfG7lISgwFsiWA" name="popularName" visibility="public" isUnique="false">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qswiuFx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofYiYYmEfG7lISgwFsiWA">
                         
                 <body>Liptrick only a transition trick?
 
@@ -44,311 +60,321 @@ Style component - ollie shifty
                   
             <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswiuVx1EfGe1epplsTXtw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ofYioYmEfG7lISgwFsiWA" value="*"/>
+                  
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYi4YmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswiulx1EfGe1epplsTXtw" name="approachDirection" visibility="public" type="_qsxKi1x1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYjIYmEfG7lISgwFsiWA" name="approachDirection" visibility="public" type="_3ofZjIYmEfG7lISgwFsiWA" isUnique="false"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswiu1x1EfGe1epplsTXtw" name="skaterSpin" visibility="public" type="_qsxKf1x1EfGe1epplsTXtw" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYjYYmEfG7lISgwFsiWA" name="skaterSpin" visibility="public" type="_3ofZgIYmEfG7lISgwFsiWA" isUnique="false">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswivFx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYjoYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswivVx1EfGe1epplsTXtw" name="boardspin " visibility="public" type="_qsxKf1x1EfGe1epplsTXtw" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYj4YmEfG7lISgwFsiWA" name="boardspin " visibility="public" type="_3ofZgIYmEfG7lISgwFsiWA" isUnique="false">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswivlx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYkIYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswiv1x1EfGe1epplsTXtw" name="inventedBy" visibility="public" type="_qsxKe1x1EfGe1epplsTXtw" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYkYYmEfG7lISgwFsiWA" name="inventedBy" visibility="public" type="_3ofZeoYmEfG7lISgwFsiWA" isUnique="false">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qswiwFx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofYkoYmEfG7lISgwFsiWA">
                         
                 <body>&lt;Enter note text here&gt;</body>
                       
             </ownedComment>
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswiwVx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYk4YmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswiwlx1EfGe1epplsTXtw" name="firstMakeBy" visibility="public" type="_qsxKe1x1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYlIYmEfG7lISgwFsiWA" name="firstMakeBy" visibility="public" type="_3ofZeoYmEfG7lISgwFsiWA" isUnique="false"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswiw1x1EfGe1epplsTXtw" name="takeOffType" visibility="public" type="_qsxKslx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYlYYmEfG7lISgwFsiWA" name="takeOffType" visibility="public" type="_3ofZs4YmEfG7lISgwFsiWA" isUnique="false"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswixFx1EfGe1epplsTXtw" name="landingType" visibility="public" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYloYmEfG7lISgwFsiWA" name="landingType" visibility="public" isUnique="false">
                   
             <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswixVx1EfGe1epplsTXtw" name="terrain" visibility="public" type="_qsxKyFx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYl4YmEfG7lISgwFsiWA" name="terrain" visibility="public" type="_3ofZyoYmEfG7lISgwFsiWA" isUnique="false"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qswixlx1EfGe1epplsTXtw" name="CompositeTrick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofYmIYmEfG7lISgwFsiWA" name="CompositeTrick">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qswix1x1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofYmYYmEfG7lISgwFsiWA">
                   
-            <body>&#13;
+            <body>
 Combo trick? </body>
                 
         </ownedComment>
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qswiyFx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofYmoYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswiyVx1EfGe1epplsTXtw" name="airTrickComponent" visibility="public" type="_qsxJ7Fx1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJxFx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYm4YmEfG7lISgwFsiWA" name="airTrickComponent" visibility="public" type="_3ofY4IYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofYuIYmEfG7lISgwFsiWA">
                   
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qswiylx1EfGe1epplsTXtw" value="*"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ofYnIYmEfG7lISgwFsiWA" value="*"/>
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswiy1x1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYnYYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswizFx1EfGe1epplsTXtw" name="grabTrickComponent" visibility="public" type="_qsxKBFx1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJx1x1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYnoYmEfG7lISgwFsiWA" name="grabTrickComponent" visibility="public" type="_3ofY-YYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofYu4YmEfG7lISgwFsiWA">
                   
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qswizVx1EfGe1epplsTXtw" value="*"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ofYn4YmEfG7lISgwFsiWA" value="*"/>
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswizlx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYoIYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswiz1x1EfGe1epplsTXtw" name="flipTrickComponent" visibility="public" type="_qsxJ6Fx1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJylx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYoYYmEfG7lISgwFsiWA" name="flipTrickComponent" visibility="public" type="_3ofY3IYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofYvoYmEfG7lISgwFsiWA">
                   
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qswi0Fx1EfGe1epplsTXtw" value="*"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ofYooYmEfG7lISgwFsiWA" value="*"/>
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswi0Vx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYo4YmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswi0lx1EfGe1epplsTXtw" name="grindTrickComponent" visibility="public" type="_qsxJ_1x1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJzVx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYpIYmEfG7lISgwFsiWA" name="grindTrickComponent" visibility="public" type="_3ofY9IYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofYwYYmEfG7lISgwFsiWA">
                   
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qswi01x1EfGe1epplsTXtw" value="*"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ofYpYYmEfG7lISgwFsiWA" value="*"/>
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswi1Fx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYpoYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswi1Vx1EfGe1epplsTXtw" name="slideTrickComponent" visibility="public" type="_qsxKDFx1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJ0Fx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYp4YmEfG7lISgwFsiWA" name="slideTrickComponent" visibility="public" type="_3ofZAYYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofYxIYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswi1lx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYqIYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswi11x1EfGe1epplsTXtw" name="flatlandTrickComponent" visibility="public" type="_qsxJ9Fx1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJ01x1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYqYYmEfG7lISgwFsiWA" name="flatlandTrickComponent" visibility="public" type="_3ofY6YYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofYx4YmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswi2Fx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYqoYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswi2Vx1EfGe1epplsTXtw" name="handplantTrickComponent" visibility="public" type="_qsxKT1x1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJ1lx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYq4YmEfG7lISgwFsiWA" name="handplantTrickComponent" visibility="public" type="_3ofZS4YmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofYyoYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswi2lx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYrIYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswi21x1EfGe1epplsTXtw" name="footplantTrickComponent" visibility="public" type="_qsxJ-Vx1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJ2Vx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYrYYmEfG7lISgwFsiWA" name="footplantTrickComponent" visibility="public" type="_3ofY7oYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofYzYYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswi3Fx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYroYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswi3Vx1EfGe1epplsTXtw" name="curbAndLiptrickComponent" visibility="public" type="_qsxKn1x1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJ3Fx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYr4YmEfG7lISgwFsiWA" name="curbAndLiptrickComponent" visibility="public" type="_3ofZoIYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofY0IYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswi3lx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYsIYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswi31x1EfGe1epplsTXtw" name="manualTrickComponent" visibility="public" type="_qsxKCVx1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJ31x1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYsYYmEfG7lISgwFsiWA" name="manualTrickComponent" visibility="public" type="_3ofY_oYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofY04YmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qswi4Fx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYsoYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qswi4Vx1EfGe1epplsTXtw" name="shoveItTrickComponent" visibility="public" type="_qsxJ_Fx1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJ4lx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYs4YmEfG7lISgwFsiWA" name="shoveItTrickComponent" visibility="public" type="_3ofY8YYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofY1oYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJwFx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYtIYmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxJwVx1EfGe1epplsTXtw" name="trickComponent" visibility="public" type="_qswitFx1EfGe1epplsTXtw" isUnique="false" aggregation="shared" association="_qsxJ5Vx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofYtYYmEfG7lISgwFsiWA" name="trickComponent" visibility="public" type="_3ofYhIYmEfG7lISgwFsiWA" isUnique="false" aggregation="shared" association="_3ofY2YYmEfG7lISgwFsiWA">
                   
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qsxJwlx1EfGe1epplsTXtw" value="*"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ofYtoYmEfG7lISgwFsiWA" value="*"/>
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJw1x1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYt4YmEfG7lISgwFsiWA"/>
                 
         </ownedAttribute>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJxFx1EfGe1epplsTXtw" memberEnd="_qswiyVx1EfGe1epplsTXtw _qsxJxVx1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofYuIYmEfG7lISgwFsiWA" memberEnd="_3ofYm4YmEfG7lISgwFsiWA _3ofYuYYmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJxVx1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJxFx1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofYuYYmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofYuIYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJxlx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYuoYmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJx1x1EfGe1epplsTXtw" memberEnd="_qswizFx1EfGe1epplsTXtw _qsxJyFx1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofYu4YmEfG7lISgwFsiWA" memberEnd="_3ofYnoYmEfG7lISgwFsiWA _3ofYvIYmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJyFx1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJx1x1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofYvIYmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofYu4YmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJyVx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYvYYmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJylx1EfGe1epplsTXtw" memberEnd="_qswiz1x1EfGe1epplsTXtw _qsxJy1x1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofYvoYmEfG7lISgwFsiWA" memberEnd="_3ofYoYYmEfG7lISgwFsiWA _3ofYv4YmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJy1x1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJylx1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofYv4YmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofYvoYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJzFx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYwIYmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJzVx1EfGe1epplsTXtw" memberEnd="_qswi0lx1EfGe1epplsTXtw _qsxJzlx1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofYwYYmEfG7lISgwFsiWA" memberEnd="_3ofYpIYmEfG7lISgwFsiWA _3ofYwoYmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJzlx1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJzVx1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofYwoYmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofYwYYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJz1x1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYw4YmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJ0Fx1EfGe1epplsTXtw" memberEnd="_qswi1Vx1EfGe1epplsTXtw _qsxJ0Vx1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofYxIYmEfG7lISgwFsiWA" memberEnd="_3ofYp4YmEfG7lISgwFsiWA _3ofYxYYmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJ0Vx1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJ0Fx1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofYxYYmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofYxIYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJ0lx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYxoYmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJ01x1EfGe1epplsTXtw" memberEnd="_qswi11x1EfGe1epplsTXtw _qsxJ1Fx1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofYx4YmEfG7lISgwFsiWA" memberEnd="_3ofYqYYmEfG7lISgwFsiWA _3ofYyIYmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJ1Fx1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJ01x1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofYyIYmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofYx4YmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJ1Vx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYyYYmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJ1lx1EfGe1epplsTXtw" memberEnd="_qswi2Vx1EfGe1epplsTXtw _qsxJ11x1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofYyoYmEfG7lISgwFsiWA" memberEnd="_3ofYq4YmEfG7lISgwFsiWA _3ofYy4YmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJ11x1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJ1lx1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofYy4YmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofYyoYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJ2Fx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYzIYmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJ2Vx1EfGe1epplsTXtw" memberEnd="_qswi21x1EfGe1epplsTXtw _qsxJ2lx1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofYzYYmEfG7lISgwFsiWA" memberEnd="_3ofYrYYmEfG7lISgwFsiWA _3ofYzoYmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJ2lx1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJ2Vx1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofYzoYmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofYzYYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJ21x1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofYz4YmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJ3Fx1EfGe1epplsTXtw" memberEnd="_qswi3Vx1EfGe1epplsTXtw _qsxJ3Vx1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofY0IYmEfG7lISgwFsiWA" memberEnd="_3ofYr4YmEfG7lISgwFsiWA _3ofY0YYmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJ3Vx1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJ3Fx1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofY0YYmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofY0IYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJ3lx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofY0oYmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJ31x1EfGe1epplsTXtw" memberEnd="_qswi31x1EfGe1epplsTXtw _qsxJ4Fx1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofY04YmEfG7lISgwFsiWA" memberEnd="_3ofYsYYmEfG7lISgwFsiWA _3ofY1IYmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJ4Fx1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJ31x1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofY1IYmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofY04YmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJ4Vx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofY1YYmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJ4lx1EfGe1epplsTXtw" memberEnd="_qswi4Vx1EfGe1epplsTXtw _qsxJ41x1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofY1oYmEfG7lISgwFsiWA" memberEnd="_3ofYs4YmEfG7lISgwFsiWA _3ofY14YmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJ41x1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJ4lx1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofY14YmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofY1oYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJ5Fx1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofY2IYmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Association" xmi:id="_qsxJ5Vx1EfGe1epplsTXtw" memberEnd="_qsxJwVx1EfGe1epplsTXtw _qsxJ5lx1EfGe1epplsTXtw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_3ofY2YYmEfG7lISgwFsiWA" memberEnd="_3ofYtYYmEfG7lISgwFsiWA _3ofY2oYmEfG7lISgwFsiWA">
             
-        <ownedEnd xmi:type="uml:Property" xmi:id="_qsxJ5lx1EfGe1epplsTXtw" visibility="public" type="_qswixlx1EfGe1epplsTXtw" isUnique="false" association="_qsxJ5Vx1EfGe1epplsTXtw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3ofY2oYmEfG7lISgwFsiWA" visibility="public" type="_3ofYmIYmEfG7lISgwFsiWA" isUnique="false" association="_3ofY2YYmEfG7lISgwFsiWA">
                   
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qsxJ51x1EfGe1epplsTXtw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ofY24YmEfG7lISgwFsiWA"/>
                 
         </ownedEnd>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxJ6Fx1EfGe1epplsTXtw" name="Fliptrick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofY3IYmEfG7lISgwFsiWA" name="Fliptrick">
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxJ6Vx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofY3YYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxJ6lx1EfGe1epplsTXtw" name="boardflipCount" visibility="public" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY3oYmEfG7lISgwFsiWA" name="boardflipCount" visibility="public" isUnique="false">
                   
             <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxJ61x1EfGe1epplsTXtw" name="flipType" visibility="public" type="_qsxKElx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY34YmEfG7lISgwFsiWA" name="flipType" visibility="public" type="_3ofZB4YmEfG7lISgwFsiWA" isUnique="false"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxJ7Fx1EfGe1epplsTXtw" name="Airtrick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofY4IYmEfG7lISgwFsiWA" name="Airtrick">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxJ7Vx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofY4YYmEfG7lISgwFsiWA">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxJ7lx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofY4oYmEfG7lISgwFsiWA">
                         
-                <body>&#13;
-Alley oop airs? Is an alley just at style of air? &#13;
-&#13;
-Lien airs - air on its own, or frontside air with a nose grab? &#13;
-&#13;
-What aboout front melon airs? &#13;
-&#13;
+                <body>
+Alley oop airs? Is an alley just at style of air? 
+
+Lien airs - air on its own, or frontside air with a nose grab? 
+
+What aboout front melon airs? 
+
 </body>
                       
             </ownedComment>
                   
-            <body>Early grab?&#13;
-&#13;
-Slob? &#13;
-&#13;
-Tuck knee&#13;
-&#13;
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofY44YmEfG7lISgwFsiWA">
+                        
+                <body>Frigid air - kick out on heel side 
+
+Judo air- kick out on toe side</body>
+                      
+            </ownedComment>
+                  
+            <body>Early grab?
+
+Slob? 
+
+Tuck knee
+
 Sal flip?</body>
                 
         </ownedComment>
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxJ71x1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofY5IYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxJ8Fx1EfGe1epplsTXtw" name="typeOfAir" visibility="public" type="_qsxKbVx1EfGe1epplsTXtw" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY5YYmEfG7lISgwFsiWA" name="typeOfAir" visibility="public" type="_3ofZa4YmEfG7lISgwFsiWA" isUnique="false">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxJ8Vx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofY5oYmEfG7lISgwFsiWA">
                         
                 <body>&lt;Enter note text here&gt;</body>
                       
@@ -356,27 +382,9 @@ Sal flip?</body>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxJ8lx1EfGe1epplsTXtw" name="travelDirection" visibility="public" type="_qsxKw1x1EfGe1epplsTXtw" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY54YmEfG7lISgwFsiWA" name="travelDirection" visibility="public" type="_3ofZxYYmEfG7lISgwFsiWA" isUnique="false">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxJ81x1EfGe1epplsTXtw">
-                        
-                <body>&lt;Enter note text here&gt;</body>
-                      
-            </ownedComment>
-                
-        </ownedAttribute>
-          
-    </packagedElement>
-      
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxJ9Fx1EfGe1epplsTXtw" name="FlatlandTrick">
-            
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxJ9Vx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
-            
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxJ9lx1EfGe1epplsTXtw" name="typeOfFlatlandTrick" visibility="public" type="_qsxKj1x1EfGe1epplsTXtw" isUnique="false"/>
-            
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxJ91x1EfGe1epplsTXtw" name="boardOrientation" visibility="public" type="_qsxKulx1EfGe1epplsTXtw" isUnique="false">
-                  
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxJ-Fx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofY6IYmEfG7lISgwFsiWA">
                         
                 <body>&lt;Enter note text here&gt;</body>
                       
@@ -386,49 +394,67 @@ Sal flip?</body>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxJ-Vx1EfGe1epplsTXtw" name="FootplantTrick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofY6YYmEfG7lISgwFsiWA" name="FlatlandTrick">
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxJ-lx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofY6oYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxJ-1x1EfGe1epplsTXtw" name="typeOfFootplant" visibility="public" type="_qsxKZVx1EfGe1epplsTXtw" isUnique="false"/>
-          
-    </packagedElement>
-      
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxJ_Fx1EfGe1epplsTXtw" name="ShoveItTrick">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY64YmEfG7lISgwFsiWA" name="typeOfFlatlandTrick" visibility="public" type="_3ofZkIYmEfG7lISgwFsiWA" isUnique="false"/>
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxJ_Vx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
-            
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxJ_lx1EfGe1epplsTXtw" name="typeOfShoveIt" visibility="public" type="_qsxKYlx1EfGe1epplsTXtw" isUnique="false"/>
-          
-    </packagedElement>
-      
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxJ_1x1EfGe1epplsTXtw" name="Grindtrick">
-            
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKAFx1EfGe1epplsTXtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY7IYmEfG7lISgwFsiWA" name="boardOrientation" visibility="public" type="_3ofZvIYmEfG7lISgwFsiWA" isUnique="false">
                   
-            <body>Hva med axel stall? Frontside disaster? Pivot fakie? Mayday? Sudden death? Zing Zing. &#13;
-&#13;
-Liptricks? &#13;
-&#13;
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofY7YYmEfG7lISgwFsiWA">
+                        
+                <body>&lt;Enter note text here&gt;</body>
+                      
+            </ownedComment>
+                
+        </ownedAttribute>
+          
+    </packagedElement>
+      
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofY7oYmEfG7lISgwFsiWA" name="FootplantTrick">
+            
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofY74YmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
+            
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY8IYmEfG7lISgwFsiWA" name="typeOfFootplant" visibility="public" type="_3ofZY4YmEfG7lISgwFsiWA" isUnique="false"/>
+          
+    </packagedElement>
+      
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofY8YYmEfG7lISgwFsiWA" name="ShoveItTrick">
+            
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofY8oYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
+            
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY84YmEfG7lISgwFsiWA" name="typeOfShoveIt" visibility="public" type="_3ofZYIYmEfG7lISgwFsiWA" isUnique="false"/>
+          
+    </packagedElement>
+      
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofY9IYmEfG7lISgwFsiWA" name="Grindtrick">
+            
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofY9YYmEfG7lISgwFsiWA">
+                  
+            <body>Hva med axel stall? Frontside disaster? Pivot fakie? Mayday? Sudden death? Zing Zing. 
+
+Liptricks? 
+
 Terrain is transition</body>
                 
         </ownedComment>
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxKAVx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofY9oYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKAlx1EfGe1epplsTXtw" name="typeOfGrind" visibility="public" type="_qsxKHVx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY94YmEfG7lISgwFsiWA" name="typeOfGrind" visibility="public" type="_3ofZEoYmEfG7lISgwFsiWA" isUnique="false"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKA1x1EfGe1epplsTXtw" name="travel Direction" visibility="public" type="_qsxKw1x1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY-IYmEfG7lISgwFsiWA" name="travel Direction" visibility="public" type="_3ofZxYYmEfG7lISgwFsiWA" isUnique="false"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxKBFx1EfGe1epplsTXtw" name="Grabtrick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofY-YYmEfG7lISgwFsiWA" name="Grabtrick">
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxKBVx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofY-oYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKBlx1EfGe1epplsTXtw" name="typeOfGrab" visibility="public" type="_qsxKMlx1EfGe1epplsTXtw" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY-4YmEfG7lISgwFsiWA" name="typeOfGrab" visibility="public" type="_3ofZKIYmEfG7lISgwFsiWA" isUnique="false">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKB1x1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofY_IYmEfG7lISgwFsiWA">
                         
                 <body>&lt;Enter note text here&gt;</body>
                       
@@ -436,29 +462,29 @@ Terrain is transition</body>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKCFx1EfGe1epplsTXtw" name="grabstyle" visibility="public" type="_qsxKmFx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofY_YYmEfG7lISgwFsiWA" name="grabstyle" visibility="public" type="_3ofZmYYmEfG7lISgwFsiWA" isUnique="false"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxKCVx1EfGe1epplsTXtw" name="ManualTrick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofY_oYmEfG7lISgwFsiWA" name="ManualTrick">
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxKClx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofY_4YmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKC1x1EfGe1epplsTXtw" name="typeOfManual" visibility="public" type="_qsxKXVx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZAIYmEfG7lISgwFsiWA" name="typeOfManual" visibility="public" type="_3ofZW4YmEfG7lISgwFsiWA" isUnique="false"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxKDFx1EfGe1epplsTXtw" name="SlideTrick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofZAYYmEfG7lISgwFsiWA" name="SlideTrick">
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxKDVx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofZAoYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKDlx1EfGe1epplsTXtw" name="typeOfSlide" visibility="public" type="_qsxKRFx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZA4YmEfG7lISgwFsiWA" name="typeOfSlide" visibility="public" type="_3ofZQIYmEfG7lISgwFsiWA" isUnique="false"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKD1x1EfGe1epplsTXtw" name="boardOrientation" visibility="public" type="_qsxKulx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZBIYmEfG7lISgwFsiWA" name="boardOrientation" visibility="public" type="_3ofZvIYmEfG7lISgwFsiWA" isUnique="false"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKEFx1EfGe1epplsTXtw" name="hasTravel Direction" visibility="public" type="_qsxKw1x1EfGe1epplsTXtw" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZBYYmEfG7lISgwFsiWA" name="hasTravel Direction" visibility="public" type="_3ofZxYYmEfG7lISgwFsiWA" isUnique="false">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKEVx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZBoYmEfG7lISgwFsiWA">
                         
                 <body>&lt;Enter note text here&gt;</body>
                       
@@ -468,102 +494,118 @@ Terrain is transition</body>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKElx1EfGe1epplsTXtw" name="FlipType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZB4YmEfG7lISgwFsiWA" name="FlipType">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKE1x1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZCIYmEfG7lISgwFsiWA">
                   
             <body>&lt;Enter note text here&gt;</body>
                 
         </ownedComment>
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKFFx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZCYYmEfG7lISgwFsiWA">
                   
-            <body>&#13;
-Laserflip&#13;
-&#13;
-Toeflip is a pressure flip</body>
+            <body>
+Laserflip
+
+Toeflip is a pressure flip
+
+hardflip is a kickflip. Frontside kickflip varial? </body>
                 
         </ownedComment>
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKFVx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZCoYmEfG7lISgwFsiWA">
                   
-            <body>&#13;
-"Named" tricks should be a trick execution, not a basic component&#13;
-&#13;
-Eg Lazer flip, Millerflip, elquerial, caballerial, gazelle flip&#13;
-&#13;
-Forward flip = Dolphin Flip, Frosty flip, Murder flip&#13;
+            <body>
+"Named" tricks should be a trick execution, not a basic component
+
+Eg Lazer flip, Millerflip, elquerial, caballerial, gazelle flip
+
+Sal flip - nose grab finger flip - Sal Barbier 
+
+Forward flip = Dolphin Flip, Frosty flip, Murder flip
+
+Hospital flip - front foot - half flip varial 
+
+Casper flip - ollie to casper back foot takes i back - casper ollie
 </body>
                 
         </ownedComment>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKFlx1EfGe1epplsTXtw" name="kickflip"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZC4YmEfG7lISgwFsiWA" name="kickflip"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKF1x1EfGe1epplsTXtw" name="heelflip"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZDIYmEfG7lISgwFsiWA" name="heelflip"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKGFx1EfGe1epplsTXtw" name="hardflip"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZDYYmEfG7lISgwFsiWA" name="hardflip"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKGVx1EfGe1epplsTXtw" name="fingerflip"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZDoYmEfG7lISgwFsiWA" name="fingerflip"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKGlx1EfGe1epplsTXtw" name="pressureflip"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZD4YmEfG7lISgwFsiWA" name="pressureflip"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKG1x1EfGe1epplsTXtw" name="backfootFlip"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZEIYmEfG7lISgwFsiWA" name="backfootFlip"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKHFx1EfGe1epplsTXtw" name="underflip"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZEYYmEfG7lISgwFsiWA" name="underflip"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKHVx1EfGe1epplsTXtw" name="GrindType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZEoYmEfG7lISgwFsiWA" name="GrindType">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKHlx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZE4YmEfG7lISgwFsiWA">
                   
-            <body>Bennet grind aka backside barley grind&#13;
-&#13;
-180 switch back smith &#13;
-&#13;
+            <body>Bennet grind aka backside barley grind
+
+180 switch back smith 
+
+Barley grind - frontisde 180 to smith grind (switch fs smith) 
+
+Bennet grind - backside 180 to smith grind (switch bs smith)
+
+Willy grind - switch fakie smithgrind  - front truck locks and backtruck hangs down in the air from the obstacle
+
+Losi grind - switch fakie feeblegrind - nose feeble, over Willy - 
+
+Salad grind - Eric Dressen - S</body>
+                
+        </ownedComment>
+            
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZFIYmEfG7lISgwFsiWA">
+                  
+            <body>
+Egen kodeliste for named tricks? Nei, de må komme som trick instanser!!!
+
+madonna
+sean penn
+barley grind
+elguerial
+bennet grind
+barley grind
+mqtwist
+hardflip
+ice plant 
+good buddy 
+
+gazelle flip
+dolphin flip 
+lazer flip
+big flip 
+bigger flip 
+big spin 
+bigger spin 
 </body>
                 
         </ownedComment>
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKH1x1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZFYYmEfG7lISgwFsiWA">
                   
-            <body>&#13;
-Egen kodeliste for named tricks&#13;
-&#13;
-madonna&#13;
-sean penn&#13;
-barley grind&#13;
-elguerial&#13;
-bennet grind&#13;
-barley grind&#13;
-mqtwist&#13;
-hardflip&#13;
-ice plant &#13;
-good buddy &#13;
-&#13;
-gazelle flip&#13;
-dolphin flip &#13;
-lazer flip&#13;
-big flip &#13;
-bigger flip &#13;
-big spin &#13;
-bigger spin &#13;
-</body>
-                
-        </ownedComment>
-            
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKIFx1EfGe1epplsTXtw">
-                  
-            <body>&#13;
-alley oop grinds? &#13;
-&#13;
+            <body>
+alley oop grinds? 
+
 Slash grinds?</body>
                 
         </ownedComment>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKIVx1EfGe1epplsTXtw" name="fifty-fifty">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZFoYmEfG7lISgwFsiWA" name="fifty-fifty">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKIlx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZF4YmEfG7lISgwFsiWA">
                         
                 <body>&lt;Enter note text here&gt;</body>
                       
@@ -571,38 +613,51 @@ Slash grinds?</body>
                 
         </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKI1x1EfGe1epplsTXtw" name="five-0"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZGIYmEfG7lISgwFsiWA" name="five-0"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKJFx1EfGe1epplsTXtw" name="nosegrind"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZGYYmEfG7lISgwFsiWA" name="nosegrind"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKJVx1EfGe1epplsTXtw" name="smithgrind"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZGoYmEfG7lISgwFsiWA" name="smithgrind"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKJlx1EfGe1epplsTXtw" name="crooked grind"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZG4YmEfG7lISgwFsiWA" name="crooked grind"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKJ1x1EfGe1epplsTXtw" name="feeble grind"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZHIYmEfG7lISgwFsiWA" name="feeble grind"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKKFx1EfGe1epplsTXtw" name="willy grind"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZHYYmEfG7lISgwFsiWA" name="willy grind"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKKVx1EfGe1epplsTXtw" name="losi grind"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKKlx1EfGe1epplsTXtw" name="barley grind"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKK1x1EfGe1epplsTXtw" name="salad grind">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZHoYmEfG7lISgwFsiWA" name="losi grind">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKLFx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZH4YmEfG7lISgwFsiWA">
                         
-                <body>&#13;
+                <body>Losi Grind har fått navn etter Allen Losi som sies å ha popularisert trikset.
+
+
+Losi Grind kalles også Bag Lady, etter at Transworld Skateboarding publiserte en trick tip artikkel med Jason Carney i 1991 som brukte det som overskrift. [1]
+
+Nose feeble, over-willy, over-scum</body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZIIYmEfG7lISgwFsiWA" name="barley grind"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZIYYmEfG7lISgwFsiWA" name="salad grind">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZIoYmEfG7lISgwFsiWA">
+                        
+                <body>
 Names after Eric Dressen? Salad dressen?</body>
                       
             </ownedComment>
                 
         </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKLVx1EfGe1epplsTXtw" name="layback grind"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZI4YmEfG7lISgwFsiWA" name="layback grind"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKLlx1EfGe1epplsTXtw" name="hurricane">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZJIYmEfG7lISgwFsiWA" name="hurricane">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKL1x1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZJYYmEfG7lISgwFsiWA">
                         
                 <body>180 ollie into fakie feeble </body>
                       
@@ -610,9 +665,9 @@ Names after Eric Dressen? Salad dressen?</body>
                 
         </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKMFx1EfGe1epplsTXtw" name="sugarcane">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZJoYmEfG7lISgwFsiWA" name="sugarcane">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKMVx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZJ4YmEfG7lISgwFsiWA">
                         
                 <body>180 into fakie smith</body>
                       
@@ -622,9 +677,9 @@ Names after Eric Dressen? Salad dressen?</body>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKMlx1EfGe1epplsTXtw" name="GrabType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZKIYmEfG7lISgwFsiWA" name="GrabType">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKM1x1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZKYYmEfG7lISgwFsiWA">
                   
             <body>
 Mute grab is now weddle
@@ -632,7 +687,7 @@ Mute grab is now weddle
                 
         </ownedComment>
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKNFx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZKoYmEfG7lISgwFsiWA">
                   
             <body>
 Styling of trick? 
@@ -657,19 +712,19 @@ Is a frigid a one foot lien air?
                 
         </ownedComment>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKNVx1EfGe1epplsTXtw" name="nosegrab"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZK4YmEfG7lISgwFsiWA" name="nosegrab"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKNlx1EfGe1epplsTXtw" name="tailgrab"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZLIYmEfG7lISgwFsiWA" name="tailgrab"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKN1x1EfGe1epplsTXtw" name="backside"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZLYYmEfG7lISgwFsiWA" name="backside"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKOFx1EfGe1epplsTXtw" name="frontside"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZLoYmEfG7lISgwFsiWA" name="frontside"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKOVx1EfGe1epplsTXtw" name="stalefish"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZL4YmEfG7lISgwFsiWA" name="stalefish"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKOlx1EfGe1epplsTXtw" name="weedle">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZMIYmEfG7lISgwFsiWA" name="weedle">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKO1x1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZMYYmEfG7lISgwFsiWA">
                         
                 <body>weedle air names after Chris Weddle, used to be mute air</body>
                       
@@ -677,230 +732,323 @@ Is a frigid a one foot lien air?
                 
         </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKPFx1EfGe1epplsTXtw" name="melon"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZMoYmEfG7lISgwFsiWA" name="melon">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZM4YmEfG7lISgwFsiWA">
+                        
+                <body>Melon - from melancholy - synonym til sad grab, fra sadplant. Backside grab handplant
+
+</body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKPVx1EfGe1epplsTXtw" name="seatbelt"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZNIYmEfG7lISgwFsiWA" name="seatbelt">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZNYYmEfG7lISgwFsiWA">
+                        
+                <body>Opposite of crail. Mute/weedle grabbing towards tail, left arm like a seatbelt across the body. </body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKPlx1EfGe1epplsTXtw" name="roastbeef"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZNoYmEfG7lISgwFsiWA" name="roastbeef">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZN4YmEfG7lISgwFsiWA">
+                        
+                <body>grab between the legs with the back hand</body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKP1x1EfGe1epplsTXtw" name="chicken salad"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZOIYmEfG7lISgwFsiWA" name="chicken salad">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZOYYmEfG7lISgwFsiWA">
+                        
+                <body>grab between the legs with the front hand</body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKQFx1EfGe1epplsTXtw" name="taipan"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZOoYmEfG7lISgwFsiWA" name="taipan">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZO4YmEfG7lISgwFsiWA">
+                        
+                <body>front hand grabbing toe side between legs 
+
+Cowboy grab</body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKQVx1EfGe1epplsTXtw" name="canadian bacon"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZPIYmEfG7lISgwFsiWA" name="canadian bacon">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZPYYmEfG7lISgwFsiWA">
+                        
+                <body>grabbing toe side with back hand between legs </body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKQlx1EfGe1epplsTXtw" name="crail grab"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZPoYmEfG7lISgwFsiWA" name="crail grab"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKQ1x1EfGe1epplsTXtw" name="double grab"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZP4YmEfG7lISgwFsiWA" name="double grab"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKRFx1EfGe1epplsTXtw" name="SlideType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZQIYmEfG7lISgwFsiWA" name="SlideType">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKRVx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZQYYmEfG7lISgwFsiWA">
                   
             <body>NaIl slide, nose and tail slide</body>
                 
         </ownedComment>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKRlx1EfGe1epplsTXtw" name="boardslide"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZQoYmEfG7lISgwFsiWA" name="boardslide"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKR1x1EfGe1epplsTXtw" name="noseslide"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZQ4YmEfG7lISgwFsiWA" name="noseslide"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKSFx1EfGe1epplsTXtw" name="tailslide"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZRIYmEfG7lISgwFsiWA" name="tailslide"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKSVx1EfGe1epplsTXtw" name="lipslide"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZRYYmEfG7lISgwFsiWA" name="lipslide"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKSlx1EfGe1epplsTXtw" name="bluntslide"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZRoYmEfG7lISgwFsiWA" name="bluntslide"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKS1x1EfGe1epplsTXtw" name="nosebluntslide"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZR4YmEfG7lISgwFsiWA" name="nosebluntslide"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKTFx1EfGe1epplsTXtw" name="darkslide"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZSIYmEfG7lISgwFsiWA" name="darkslide"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKTVx1EfGe1epplsTXtw" name="crailslide"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZSYYmEfG7lISgwFsiWA" name="crailslide"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKTlx1EfGe1epplsTXtw" name="primoslide"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZSoYmEfG7lISgwFsiWA" name="primoslide"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxKT1x1EfGe1epplsTXtw" name="HandplantTrick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofZS4YmEfG7lISgwFsiWA" name="HandplantTrick">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKUFx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZTIYmEfG7lISgwFsiWA">
                   
             <body>&lt;Enter note text here&gt;</body>
                 
         </ownedComment>
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxKUVx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofZTYYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKUlx1EfGe1epplsTXtw" name="typeOfHandplant" visibility="public" type="_qsxKU1x1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZToYmEfG7lISgwFsiWA" name="typeOfHandplant" visibility="public" type="_3ofZT4YmEfG7lISgwFsiWA" isUnique="false"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKU1x1EfGe1epplsTXtw" name="HandplantType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZT4YmEfG7lISgwFsiWA" name="HandplantType">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKVFx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZUIYmEfG7lISgwFsiWA">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKVVx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZUYYmEfG7lISgwFsiWA">
                         
                 <body>&lt;Enter note text here&gt;</body>
                       
             </ownedComment>
                   
-            <body>&#13;
-Good buddy er fakie eggplant&#13;
-&#13;
-Kickflip eggplant - hva var det igjen? &#13;
-Scrambled egg - Andy Scott :)&#13;
-&#13;
-Flippin Egg &#13;
-&#13;
-Scrambled Egg can also be eggplant disaster </body>
+            <body>
+Good buddy er fakie eggplant - så eggplant - aka ikke basictrick 
+
+Kickflip eggplant - hva var det igjen? 
+Scrambled egg - Andy Scott :)
+
+Flippin Egg 
+
+Scrambled Egg can also be eggplant disaster 
+
+Sadplant-Jeff Grosso: 
+"A sad plant would be the straightening of your front leg. You kind of tuck your back leg in towards your balls and straighten your front leg out. Kind of like a shifty ollie, but grabbing the board. You can Sad a frontside invert. You can Sad an Andrecht. You can even kind of Sad an egg (plant). You can kind of Sad it backwards. But for a purist’s sake, just so people don’t get confused. Let’s just say it’s a regular handplant, where you straighten your front leg. The entire thing, I guess it should also be said, that really the trick is in the back toe. Like to make them look pretty you have to like roll your back toe over the back of your tail like you’re slapping a rock (n’roll)."</body>
                 
         </ownedComment>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKVlx1EfGe1epplsTXtw" name="invert"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZUoYmEfG7lISgwFsiWA" name="invert"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKV1x1EfGe1epplsTXtw" name="andrecht"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZU4YmEfG7lISgwFsiWA" name="andrecht"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKWFx1EfGe1epplsTXtw" name="eggplant"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZVIYmEfG7lISgwFsiWA" name="eggplant"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKWVx1EfGe1epplsTXtw" name="good buddy">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZVYYmEfG7lISgwFsiWA" name="good buddy">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKWlx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZVoYmEfG7lISgwFsiWA">
                         
-                <body>&#13;
+                <body>
 good buddy is a fakie eggplant</body>
                       
             </ownedComment>
                 
         </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKW1x1EfGe1epplsTXtw" name="layback air"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZV4YmEfG7lISgwFsiWA" name="layback air"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKXFx1EfGe1epplsTXtw" name="millerflip"/>
-          
-    </packagedElement>
-      
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKXVx1EfGe1epplsTXtw" name="ManualType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZWIYmEfG7lISgwFsiWA" name="millerflip"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKXlx1EfGe1epplsTXtw" name="manual"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKX1x1EfGe1epplsTXtw" name="nose manual"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKYFx1EfGe1epplsTXtw" name="one wheel manual"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKYVx1EfGe1epplsTXtw" name="one wheel nose manual"/>
-          
-    </packagedElement>
-      
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKYlx1EfGe1epplsTXtw" name="ShoveItType">
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKY1x1EfGe1epplsTXtw" name="shove-it"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKZFx1EfGe1epplsTXtw" name="pop shove-it"/>
-          
-    </packagedElement>
-      
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKZVx1EfGe1epplsTXtw" name="FootplantType">
-            
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKZlx1EfGe1epplsTXtw">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZWYYmEfG7lISgwFsiWA" name="sadplant">
                   
-            <body>&#13;
-Ice plant is a bean plant to fakie? &#13;
-&#13;
-No, ice plant is a frontside bean plant&#13;
-&#13;
-Texas plant is a front mute bean plant with a tail grab &#13;
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZWoYmEfG7lISgwFsiWA">
+                        
+                <body>Sadplant - Sadlands handplant. 
+
+First up, I wanted to post Neil Blender’s Sadlands article from our second issue back in ’83. In addition to showcasing one of the coolest spots in skateboard history—Brookhust Park in Anaheim (circa ’72-’89)—the photo in the article of Lance Mountain doing a tweaked invert on one of the moonscape blobs there incidentally coined the name “Sadplant�? aka Sadlands handplant. Furthermore, ollie Sads, then Melancholy’s were the derivative later attached to tweaked backside grabs—all traced back to this single photo.—ME</body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
+          
+    </packagedElement>
+      
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZW4YmEfG7lISgwFsiWA" name="ManualType">
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZXIYmEfG7lISgwFsiWA" name="manual"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZXYYmEfG7lISgwFsiWA" name="nose manual"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZXoYmEfG7lISgwFsiWA" name="one wheel manual"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZX4YmEfG7lISgwFsiWA" name="one wheel nose manual"/>
+          
+    </packagedElement>
+      
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZYIYmEfG7lISgwFsiWA" name="ShoveItType">
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZYYYmEfG7lISgwFsiWA" name="shove-it"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZYoYmEfG7lISgwFsiWA" name="pop shove-it"/>
+          
+    </packagedElement>
+      
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZY4YmEfG7lISgwFsiWA" name="FootplantType">
+            
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZZIYmEfG7lISgwFsiWA">
+                  
+            <body>
+Ice plant is a bean plant to fakie? 
+
+No, ice plant is a frontside bean plant
+
+Texas plant is a front mute bean plant with a tail grab 
 </body>
                 
         </ownedComment>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKZ1x1EfGe1epplsTXtw" name="boneless"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZZYYmEfG7lISgwFsiWA" name="boneless"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKaFx1EfGe1epplsTXtw" name="bean plant"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZZoYmEfG7lISgwFsiWA" name="bean plant"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKaVx1EfGe1epplsTXtw" name="fast plant"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZZ4YmEfG7lISgwFsiWA" name="fast plant"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKalx1EfGe1epplsTXtw" name="texas plant"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZaIYmEfG7lISgwFsiWA" name="texas plant"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKa1x1EfGe1epplsTXtw" name="ice plant"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZaYYmEfG7lISgwFsiWA" name="ice plant"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKbFx1EfGe1epplsTXtw" name="sweeper"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZaoYmEfG7lISgwFsiWA" name="sweeper"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKbVx1EfGe1epplsTXtw" name="AirType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZa4YmEfG7lISgwFsiWA" name="AirType">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKblx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZbIYmEfG7lISgwFsiWA">
                   
-            <body>&#13;
-On indys&#13;
-&#13;
-Duane peters named the indy air after independent truck company&#13;
-&#13;
-Gunnar Haugo was the first to do Gunnar airs og Gunn-airs. Peters was the one stoking everybody, and also called it the "Santa Cruzial". &#13;
-&#13;
+            <body>
+On indys
+
+Duane peters named the indy air after independent truck company
+
+Gunnar Haugo was the first to do Gunnar airs og Gunn-airs. Peters was the one stoking everybody, and also called it the "Santa Cruzial". 
+
 </body>
                 
         </ownedComment>
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKb1x1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZbYYmEfG7lISgwFsiWA">
                   
-            <body>&#13;
-On methods&#13;
-&#13;
+            <body>
+On methods
+
 It was Dave Andrecht who did back-arching airs on vert in 1980 -- it was his way to make the board and himself go higher. Blender learned backside airs by grabbing in front of the foot, but soon realized the proper "method" (hence the name "method," which was coined by Blender) to go higher and more tweaked was by grabbing behind the foot.</body>
                 
         </ownedComment>
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKcFx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZboYmEfG7lISgwFsiWA">
                   
-            <body>Billy Ruff - the Unit - frontside 540 - No rodeo?&#13;
-&#13;
-1984 McGill McTwist&#13;
-1985 - Tony 720 &#13;
+            <body>Billy Ruff - the Unit - frontside 540 - No rodeo?
+
+1984 McGill McTwist
+1985 - Tony 720 
 </body>
                 
         </ownedComment>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKcVx1EfGe1epplsTXtw" name="backside air"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZb4YmEfG7lISgwFsiWA" name="backside air"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKclx1EfGe1epplsTXtw" name="frontside air"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZcIYmEfG7lISgwFsiWA" name="frontside air"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKc1x1EfGe1epplsTXtw" name="judo air"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZcYYmEfG7lISgwFsiWA" name="judo air">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZcoYmEfG7lISgwFsiWA">
+                        
+                <body>Toe side kick </body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKdFx1EfGe1epplsTXtw" name="frigid air"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZc4YmEfG7lISgwFsiWA" name="frigid air">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZdIYmEfG7lISgwFsiWA">
+                        
+                <body>heel side kick</body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKdVx1EfGe1epplsTXtw" name="rocket air"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZdYYmEfG7lISgwFsiWA" name="rocket air"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKdlx1EfGe1epplsTXtw" name="mctwist"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZdoYmEfG7lISgwFsiWA" name="mctwist"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKd1x1EfGe1epplsTXtw" name="rodeo"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZd4YmEfG7lISgwFsiWA" name="rodeo"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKeFx1EfGe1epplsTXtw" name="air"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZeIYmEfG7lISgwFsiWA" name="air"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKeVx1EfGe1epplsTXtw" name="Lien air"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKelx1EfGe1epplsTXtw" name="sal flip?"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZeYYmEfG7lISgwFsiWA" name="lien air"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxKe1x1EfGe1epplsTXtw" name="Skater">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofZeoYmEfG7lISgwFsiWA" name="Skater">
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKfFx1EfGe1epplsTXtw" name="name" visibility="public" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZe4YmEfG7lISgwFsiWA" name="name" visibility="public" isUnique="false">
                   
             <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKfVx1EfGe1epplsTXtw" name="country" visibility="public" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZfIYmEfG7lISgwFsiWA" name="country" visibility="public" isUnique="false">
                   
             <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
                 
         </ownedAttribute>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKflx1EfGe1epplsTXtw" name="state" visibility="public" isUnique="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZfYYmEfG7lISgwFsiWA" name="state" visibility="public" isUnique="false">
+                  
+            <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+                
+        </ownedAttribute>
+            
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZfoYmEfG7lISgwFsiWA" name="fromCity" visibility="public" isUnique="false">
+                  
+            <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+                
+        </ownedAttribute>
+            
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZf4YmEfG7lISgwFsiWA" name="livesInCity" visibility="public" isUnique="false">
                   
             <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
                 
@@ -908,125 +1056,125 @@ It was Dave Andrecht who did back-arching airs on vert in 1980 -- it was his way
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxKf1x1EfGe1epplsTXtw" name="Spin">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofZgIYmEfG7lISgwFsiWA" name="Spin">
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKgFx1EfGe1epplsTXtw" name="degrees" visibility="public" type="_qsxKglx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZgYYmEfG7lISgwFsiWA" name="degrees" visibility="public" type="_3ofZg4YmEfG7lISgwFsiWA" isUnique="false"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKgVx1EfGe1epplsTXtw" name="direction" visibility="public" type="_qsxKi1x1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZgoYmEfG7lISgwFsiWA" name="direction" visibility="public" type="_3ofZjIYmEfG7lISgwFsiWA" isUnique="false"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKglx1EfGe1epplsTXtw" name="DegreesOfSpin">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZg4YmEfG7lISgwFsiWA" name="DegreesOfSpin">
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKg1x1EfGe1epplsTXtw" name="180"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZhIYmEfG7lISgwFsiWA" name="180"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKhFx1EfGe1epplsTXtw" name="360"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZhYYmEfG7lISgwFsiWA" name="360"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKhVx1EfGe1epplsTXtw" name="270"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZhoYmEfG7lISgwFsiWA" name="270"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKhlx1EfGe1epplsTXtw" name="540"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZh4YmEfG7lISgwFsiWA" name="540"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKh1x1EfGe1epplsTXtw" name="720"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZiIYmEfG7lISgwFsiWA" name="720"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKiFx1EfGe1epplsTXtw" name="900"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZiYYmEfG7lISgwFsiWA" name="900"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKiVx1EfGe1epplsTXtw" name="1080"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZioYmEfG7lISgwFsiWA" name="1080"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKilx1EfGe1epplsTXtw" name="1260"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZi4YmEfG7lISgwFsiWA" name="1260"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKi1x1EfGe1epplsTXtw" name="Direction">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZjIYmEfG7lISgwFsiWA" name="Direction">
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKjFx1EfGe1epplsTXtw" name="backside"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZjYYmEfG7lISgwFsiWA" name="backside"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKjVx1EfGe1epplsTXtw" name="frontside"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZjoYmEfG7lISgwFsiWA" name="frontside"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKjlx1EfGe1epplsTXtw" name="none (straight)"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZj4YmEfG7lISgwFsiWA" name="none (straight)"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKj1x1EfGe1epplsTXtw" name="FlatlandType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZkIYmEfG7lISgwFsiWA" name="FlatlandType">
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKkFx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZkYYmEfG7lISgwFsiWA">
                   
-            <body>&#13;
-Impossible&#13;
-&#13;
-no ollie, scooping &#13;
-&#13;
-board spins 360&#13;
-&#13;
-around leg &#13;
-&#13;
+            <body>
+Impossible
+
+no ollie, scooping 
+
+board spins 360
+
+around leg 
+
 rail flip from primo?</body>
                 
         </ownedComment>
             
-        <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKkVx1EfGe1epplsTXtw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZkoYmEfG7lISgwFsiWA">
                   
-            <body>&#13;
-Is a step off a footplant trick&#13;
-&#13;
+            <body>
+Is a step off a footplant trick
+
 No comply ? </body>
                 
         </ownedComment>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKklx1EfGe1epplsTXtw" name="primo"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZk4YmEfG7lISgwFsiWA" name="primo"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKk1x1EfGe1epplsTXtw" name="casper"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZlIYmEfG7lISgwFsiWA" name="casper"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKlFx1EfGe1epplsTXtw" name="streetplant"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZlYYmEfG7lISgwFsiWA" name="streetplant"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKlVx1EfGe1epplsTXtw" name="hippie jump"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZloYmEfG7lISgwFsiWA" name="hippie jump"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKllx1EfGe1epplsTXtw" name="step off"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZl4YmEfG7lISgwFsiWA" name="step off"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKl1x1EfGe1epplsTXtw" name="no comply"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZmIYmEfG7lISgwFsiWA" name="no comply"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKmFx1EfGe1epplsTXtw" name="GrabStyle">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZmYYmEfG7lISgwFsiWA" name="GrabStyle">
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKmVx1EfGe1epplsTXtw" name="nosebone"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZmoYmEfG7lISgwFsiWA" name="nosebone"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKmlx1EfGe1epplsTXtw" name="tucknee"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZm4YmEfG7lISgwFsiWA" name="tucknee"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKm1x1EfGe1epplsTXtw" name="tailbone"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZnIYmEfG7lISgwFsiWA" name="tailbone"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKnFx1EfGe1epplsTXtw" name="stiffy"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZnYYmEfG7lISgwFsiWA" name="stiffy"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKnVx1EfGe1epplsTXtw" name="stinkbug"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZnoYmEfG7lISgwFsiWA" name="stinkbug"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKnlx1EfGe1epplsTXtw" name="tweak"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZn4YmEfG7lISgwFsiWA" name="tweak"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Class" xmi:id="_qsxKn1x1EfGe1epplsTXtw" name="CurbAndLiptrick">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ofZoIYmEfG7lISgwFsiWA" name="CurbAndLiptrick">
             
-        <generalization xmi:type="uml:Generalization" xmi:id="_qsxKoFx1EfGe1epplsTXtw" general="_qswitFx1EfGe1epplsTXtw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_3ofZoYYmEfG7lISgwFsiWA" general="_3ofYhIYmEfG7lISgwFsiWA"/>
             
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qsxKoVx1EfGe1epplsTXtw" name="typeOfCurbAndLiptrick" visibility="public" type="_qsxKolx1EfGe1epplsTXtw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3ofZooYmEfG7lISgwFsiWA" name="typeOfCurbAndLiptrick" visibility="public" type="_3ofZo4YmEfG7lISgwFsiWA" isUnique="false"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKolx1EfGe1epplsTXtw" name="CurbAndLiptrickType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZo4YmEfG7lISgwFsiWA" name="CurbAndLiptrickType">
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKo1x1EfGe1epplsTXtw" name="axle stall"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZpIYmEfG7lISgwFsiWA" name="axle stall"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKpFx1EfGe1epplsTXtw" name="five-o stall"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZpYYmEfG7lISgwFsiWA" name="five-o stall"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKpVx1EfGe1epplsTXtw" name="rock'n roll"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZpoYmEfG7lISgwFsiWA" name="rock'n roll"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKplx1EfGe1epplsTXtw" name="smith stall"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZp4YmEfG7lISgwFsiWA" name="smith stall"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKp1x1EfGe1epplsTXtw" name="nose stall"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZqIYmEfG7lISgwFsiWA" name="nose stall"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKqFx1EfGe1epplsTXtw" name="tail stall"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZqYYmEfG7lISgwFsiWA" name="tail stall"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKqVx1EfGe1epplsTXtw" name="nosepick">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZqoYmEfG7lISgwFsiWA" name="nosepick">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKqlx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZq4YmEfG7lISgwFsiWA">
                         
                 <body>&lt;Enter note text here&gt;</body>
                       
@@ -1034,47 +1182,56 @@ No comply ? </body>
                 
         </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKq1x1EfGe1epplsTXtw" name="pivot"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZrIYmEfG7lISgwFsiWA" name="pivot"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKrFx1EfGe1epplsTXtw" name="staple gun"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZrYYmEfG7lISgwFsiWA" name="staple gun"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKrVx1EfGe1epplsTXtw" name="disaster"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZroYmEfG7lISgwFsiWA" name="disaster"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKrlx1EfGe1epplsTXtw" name="zing zing"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZr4YmEfG7lISgwFsiWA" name="zing zing"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKr1x1EfGe1epplsTXtw" name="tail block"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZsIYmEfG7lISgwFsiWA" name="tail block"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKsFx1EfGe1epplsTXtw" name="blunt"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZsYYmEfG7lISgwFsiWA" name="blunt"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKsVx1EfGe1epplsTXtw" name="noseblunt"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZsoYmEfG7lISgwFsiWA" name="noseblunt"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKslx1EfGe1epplsTXtw" name="TakeOffType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZs4YmEfG7lISgwFsiWA" name="TakeOffType">
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKs1x1EfGe1epplsTXtw" name="ollie"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKtFx1EfGe1epplsTXtw" name="nollie"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKtVx1EfGe1epplsTXtw" name="caveman"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKtlx1EfGe1epplsTXtw" name="boneless"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKt1x1EfGe1epplsTXtw" name="pressure"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKuFx1EfGe1epplsTXtw" name="scoop"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKuVx1EfGe1epplsTXtw" name="rollOff"/>
-          
-    </packagedElement>
-      
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKulx1EfGe1epplsTXtw" name="BoardOrientation">
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKu1x1EfGe1epplsTXtw" name="normal"/>
-            
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKvFx1EfGe1epplsTXtw" name="inverted">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZtIYmEfG7lISgwFsiWA" name="ollie">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKvVx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZtYYmEfG7lISgwFsiWA">
+                        
+                <body>
+Hva med ollie shifty ? Kickflip shifty? Styling trickset. Som ikke er et air trick? </body>
+                      
+            </ownedComment>
+                
+        </ownedLiteral>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZtoYmEfG7lISgwFsiWA" name="nollie"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZt4YmEfG7lISgwFsiWA" name="caveman"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZuIYmEfG7lISgwFsiWA" name="boneless"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZuYYmEfG7lISgwFsiWA" name="pressure"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZuoYmEfG7lISgwFsiWA" name="scoop"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZu4YmEfG7lISgwFsiWA" name="rollOff"/>
+          
+    </packagedElement>
+      
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZvIYmEfG7lISgwFsiWA" name="BoardOrientation">
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZvYYmEfG7lISgwFsiWA" name="normal"/>
+            
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZvoYmEfG7lISgwFsiWA" name="inverted">
+                  
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZv4YmEfG7lISgwFsiWA">
                         
                 <body>Board upside-down, grip tape facing down. Casper, darkslide.</body>
                       
@@ -1082,9 +1239,9 @@ No comply ? </body>
                 
         </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKvlx1EfGe1epplsTXtw" name="edge">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZwIYmEfG7lISgwFsiWA" name="edge">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKv1x1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZwYYmEfG7lISgwFsiWA">
                         
                 <body>Board on its edge at 90°. Primo, half Casper.</body>
                       
@@ -1094,19 +1251,19 @@ No comply ? </body>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKwFx1EfGe1epplsTXtw" name="LandingType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZwoYmEfG7lISgwFsiWA" name="LandingType">
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKwVx1EfGe1epplsTXtw" name="normal"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZw4YmEfG7lISgwFsiWA" name="normal"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKwlx1EfGe1epplsTXtw" name="fakie"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZxIYmEfG7lISgwFsiWA" name="fakie"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKw1x1EfGe1epplsTXtw" name="TravelDirection">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZxYYmEfG7lISgwFsiWA" name="TravelDirection">
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKxFx1EfGe1epplsTXtw" name="normal ">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZxoYmEfG7lISgwFsiWA" name="normal ">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKxVx1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZx4YmEfG7lISgwFsiWA">
                         
                 <body>approach follows travel momentum</body>
                       
@@ -1114,9 +1271,9 @@ No comply ? </body>
                 
         </ownedLiteral>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKxlx1EfGe1epplsTXtw" name="alleyoop">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZyIYmEfG7lISgwFsiWA" name="alleyoop">
                   
-            <ownedComment xmi:type="uml:Comment" xmi:id="_qsxKx1x1EfGe1epplsTXtw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_3ofZyYYmEfG7lISgwFsiWA">
                         
                 <body>approach opposing normal travel momentum, eg alleyopp</body>
                       
@@ -1126,19 +1283,19 @@ No comply ? </body>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKyFx1EfGe1epplsTXtw" name="TerrainType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZyoYmEfG7lISgwFsiWA" name="TerrainType">
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKyVx1EfGe1epplsTXtw" name="transition"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZy4YmEfG7lISgwFsiWA" name="transition"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKylx1EfGe1epplsTXtw" name="flatland"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZzIYmEfG7lISgwFsiWA" name="flatland"/>
           
     </packagedElement>
       
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qsxKy1x1EfGe1epplsTXtw" name="TransitionType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ofZzYYmEfG7lISgwFsiWA" name="TransitionType">
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKzFx1EfGe1epplsTXtw" name="quarterpipe"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZzoYmEfG7lISgwFsiWA" name="quarterpipe"/>
             
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qsxKzVx1EfGe1epplsTXtw" name="halfpipe"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3ofZz4YmEfG7lISgwFsiWA" name="halfpipe"/>
           
     </packagedElement>
     
