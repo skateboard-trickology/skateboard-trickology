@@ -1,16 +1,22 @@
 ---
-iri: ":MuteGrab"
-label: "Weddle grab"
-aliases: ["Mute grab", "Mute air"]
-type: trick
-tags: [grabTrick]
+iri: :MuteGrab
+label: Weddle grab
+aliases:
+  - Mute grab
+  - Mute air
+type: Trick
+tags:
+  - grabTrick
 invented: 1981
-inventor: "Chris Weddle"
-popularized-by: ["Chris Weddle", "Tony Hawk"]
-origin: "Californian vert/park scene, early 1980s"
+inventor: Chris Weddle
+popularized-by:
+  - Chris Weddle
+  - Tony Hawk
+origin: Californian vert/park scene, early 1980s
 status: in-ontology
 confidence: high
-sources: [https://www.instagram.com/p/CDy21PIJWBZ/?utm_source=ig_web_copy_link&igsi=NTc4MTIwNjQ2YQ==]
+sources:
+  - https://www.instagram.com/p/CDy21PIJWBZ/?utm_source=ig_web_copy_link&igsi=NTc4MTIwNjQ2YQ==
 ---
 
 # Weddle grab
