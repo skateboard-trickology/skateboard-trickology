@@ -1,0 +1,855 @@
+@prefix : <https://skateboard.ontology/tricks#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ===========================================================================
+# ONTOLOGY HEADER
+# ===========================================================================
+
+<https://skateboard.ontology/tricks>
+    a owl:Ontology ;
+    rdfs:label "Skateboard Trickology" ;
+    owl:versionInfo "0.3" ;
+    rdfs:comment """
+Skateboard Trickology - an OWL ontology for describing and classifying
+skateboarding tricks. Version 0.3 is derived directly from the UML class
+model (skateboardingtrickology-UML2.4.1.xmi), which is the source of truth.
+Structure: a Trick superclass with trick-family subclasses, enumerations
+modelled as classes with explicit named individuals, and multiplicities
+from the UML carried over as OWL max-cardinality restrictions.
+Note on multiplicities: minimum cardinalities from the UML (e.g. name [1])
+are intentionally NOT enforced as OWL restrictions, because under the open
+world assumption they do not behave as validation. They are documented in
+comments and are intended to be enforced by SHACL shapes in a separate file.
+""" .
+
+# ===========================================================================
+# ENUMERATIONS
+# Each enumeration is a class whose extension is a closed set of named
+# individuals (owl:oneOf). Values are concepts in their own right.
+# ===========================================================================
+
+# --- Direction (rotation: backside / frontside / none) ---
+
+:Direction a owl:Class ;
+    rdfs:label "Direction" ;
+    skos:definition "Rotation direction of a spin, relative to the skater's body: backside, frontside, or none (straight)." ;
+    owl:oneOf ( :backside :frontside :straight ) .
+
+:backside a :Direction, owl:NamedIndividual ; rdfs:label "backside" .
+:frontside a :Direction, owl:NamedIndividual ; rdfs:label "frontside" .
+:straight a :Direction, owl:NamedIndividual ;
+    rdfs:label "none (straight)" ;
+    rdfs:comment "No rotation. IRI is :straight to avoid the reserved-feeling name 'none'." .
+
+# --- DegreesOfSpin ---
+
+:DegreesOfSpin a owl:Class ;
+    rdfs:label "DegreesOfSpin" ;
+    skos:definition "The magnitude of a rotation, in degrees." ;
+    owl:oneOf ( :degrees180 :degrees270 :degrees360 :degrees540
+                :degrees720 :degrees900 :degrees1080 :degrees1260 ) .
+
+:spinDegreeValue a owl:DatatypeProperty ;
+    rdfs:domain :DegreesOfSpin ;
+    rdfs:range xsd:integer ;
+    rdfs:label "spin degree value" ;
+    rdfs:comment "Numeric value of the spin, enabling ordering and arithmetic in SPARQL." .
+
+:degrees180 a :DegreesOfSpin, owl:NamedIndividual ; rdfs:label "180" ; :spinDegreeValue 180 .
+:degrees270 a :DegreesOfSpin, owl:NamedIndividual ; rdfs:label "270" ; :spinDegreeValue 270 .
+:degrees360 a :DegreesOfSpin, owl:NamedIndividual ; rdfs:label "360" ; :spinDegreeValue 360 .
+:degrees540 a :DegreesOfSpin, owl:NamedIndividual ; rdfs:label "540" ; :spinDegreeValue 540 .
+:degrees720 a :DegreesOfSpin, owl:NamedIndividual ; rdfs:label "720" ; :spinDegreeValue 720 .
+:degrees900 a :DegreesOfSpin, owl:NamedIndividual ; rdfs:label "900" ; :spinDegreeValue 900 .
+:degrees1080 a :DegreesOfSpin, owl:NamedIndividual ; rdfs:label "1080" ; :spinDegreeValue 1080 .
+:degrees1260 a :DegreesOfSpin, owl:NamedIndividual ; rdfs:label "1260" ; :spinDegreeValue 1260 .
+
+# --- TerrainType ---
+
+:TerrainType a owl:Class ;
+    rdfs:label "TerrainType" ;
+    skos:definition "The category of terrain a trick is performed on." ;
+    owl:oneOf ( :transition :flatland ) .
+
+:transition a :TerrainType, owl:NamedIndividual ; rdfs:label "transition" .
+:flatland a :TerrainType, owl:NamedIndividual ; rdfs:label "flatland" .
+
+# --- TransitionType (currently unattached; kept from the UML model) ---
+
+:TransitionType a owl:Class ;
+    rdfs:label "TransitionType" ;
+    skos:definition "The kind of transition obstacle." ;
+    rdfs:comment "Present in the UML model but not yet referenced by any Trick property." ;
+    owl:oneOf ( :quarterpipe :halfpipe ) .
+
+:quarterpipe a :TransitionType, owl:NamedIndividual ; rdfs:label "quarterpipe" .
+:halfpipe a :TransitionType, owl:NamedIndividual ; rdfs:label "halfpipe" .
+
+# --- TakeOffType ---
+# NOTE: the value 'ollie' collides with the Trick individual :ollie
+# (the Ollie problem). Pragmatic v0.3 resolution: TakeOffType individuals
+# carry a TakeOff suffix; linking both to a shared skos:Concept is deferred.
+
+:TakeOffType a owl:Class ;
+    rdfs:label "TakeOffType" ;
+    skos:definition "How the trick is initiated." ;
+    owl:oneOf ( :ollieTakeOff :nollieTakeOff :cavemanTakeOff :bonelessTakeOff
+                :pressureTakeOff :scoopTakeOff :rollOffTakeOff ) .
+
+:ollieTakeOff a :TakeOffType, owl:NamedIndividual ; rdfs:label "ollie" .
+:nollieTakeOff a :TakeOffType, owl:NamedIndividual ; rdfs:label "nollie" .
+:cavemanTakeOff a :TakeOffType, owl:NamedIndividual ; rdfs:label "caveman" .
+:bonelessTakeOff a :TakeOffType, owl:NamedIndividual ; rdfs:label "boneless" .
+:pressureTakeOff a :TakeOffType, owl:NamedIndividual ; rdfs:label "pressure" .
+:scoopTakeOff a :TakeOffType, owl:NamedIndividual ; rdfs:label "scoop" .
+:rollOffTakeOff a :TakeOffType, owl:NamedIndividual ; rdfs:label "rollOff" .
+
+# --- RollAwayDirection ---
+
+:RollAwayDirection a owl:Class ;
+    rdfs:label "RollAwayDirection" ;
+    skos:definition "Direction of travel when rolling out of a trick, relative to the skater's own stance: normal (facing the usual riding direction) or fakie (rolling backwards). Stance-agnostic by construction." ;
+    owl:oneOf ( :normalRollAway :fakieRollAway ) .
+
+:normalRollAway a :RollAwayDirection, owl:NamedIndividual ; rdfs:label "normal" .
+:fakieRollAway a :RollAwayDirection, owl:NamedIndividual ; rdfs:label "fakie" .
+
+# --- TravelDirection ---
+
+:TravelDirection a owl:Class ;
+    rdfs:label "TravelDirection" ;
+    skos:definition "Direction of travel through a trick relative to approach: normal or alleyoop (travelling opposite to the rotation/approach)." ;
+    owl:oneOf ( :normalTravel :alleyoop ) .
+
+:normalTravel a :TravelDirection, owl:NamedIndividual ; rdfs:label "normal" .
+:alleyoop a :TravelDirection, owl:NamedIndividual ; rdfs:label "alleyoop" .
+
+# --- DifficultyLevel ---
+# The UML currently lists basic/intermediate/advanced; the agreed model
+# adds 'pro' as a fourth tier. Each level has a rank for ordering.
+
+:DifficultyLevel a owl:Class ;
+    rdfs:label "DifficultyLevel" ;
+    skos:definition "Baseline difficulty of a trick, assuming standard execution context." ;
+    owl:oneOf ( :basic :intermediate :advanced :pro ) .
+
+:hasRank a owl:DatatypeProperty ;
+    rdfs:domain :DifficultyLevel ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has rank" .
+
+:basic a :DifficultyLevel, owl:NamedIndividual ; rdfs:label "basic" ; :hasRank 1 .
+:intermediate a :DifficultyLevel, owl:NamedIndividual ; rdfs:label "intermediate" ; :hasRank 2 .
+:advanced a :DifficultyLevel, owl:NamedIndividual ; rdfs:label "advanced" ; :hasRank 3 .
+:pro a :DifficultyLevel, owl:NamedIndividual ; rdfs:label "pro" ; :hasRank 4 .
+
+# --- AirType ---
+
+:AirType a owl:Class ;
+    rdfs:label "AirType" ;
+    owl:oneOf ( :backsideAirType :frontsideAirType :judoAir :frigidAirType
+                :rocketAir :mctwistType :rodeo :airType :lienAir ) .
+
+:backsideAirType a :AirType, owl:NamedIndividual ; rdfs:label "backside air" .
+:frontsideAirType a :AirType, owl:NamedIndividual ; rdfs:label "frontside air" .
+:judoAir a :AirType, owl:NamedIndividual ; rdfs:label "judo air" ;
+    rdfs:comment "Kick out on toe side." .
+:frigidAirType a :AirType, owl:NamedIndividual ; rdfs:label "frigid air" ;
+    rdfs:comment "Kick out on heel side." .
+:rocketAir a :AirType, owl:NamedIndividual ; rdfs:label "rocket air" .
+:mctwistType a :AirType, owl:NamedIndividual ; rdfs:label "mctwist" .
+:rodeo a :AirType, owl:NamedIndividual ; rdfs:label "rodeo" .
+:airType a :AirType, owl:NamedIndividual ; rdfs:label "air" .
+:lienAir a :AirType, owl:NamedIndividual ; rdfs:label "lien air" .
+
+# --- GrabType ---
+
+:GrabType a owl:Class ;
+    rdfs:label "GrabType" ;
+    owl:oneOf ( :nosegrab :tailgrab :backsideGrab :frontsideGrab :stalefish
+                :weedle :melon :seatbelt :roastbeef :chickenSalad :taipan
+                :canadianBacon :crailGrab :doubleGrab ) .
+
+:nosegrab a :GrabType, owl:NamedIndividual ; rdfs:label "nosegrab" .
+:tailgrab a :GrabType, owl:NamedIndividual ; rdfs:label "tailgrab" .
+:backsideGrab a :GrabType, owl:NamedIndividual ; rdfs:label "backside" .
+:frontsideGrab a :GrabType, owl:NamedIndividual ; rdfs:label "frontside" .
+:stalefish a :GrabType, owl:NamedIndividual ; rdfs:label "stalefish" .
+:weedle a :GrabType, owl:NamedIndividual ; rdfs:label "weedle" ;
+    rdfs:comment "Mute grab is now weedle." .
+:melon a :GrabType, owl:NamedIndividual ; rdfs:label "melon" .
+:seatbelt a :GrabType, owl:NamedIndividual ; rdfs:label "seatbelt" .
+:roastbeef a :GrabType, owl:NamedIndividual ; rdfs:label "roastbeef" .
+:chickenSalad a :GrabType, owl:NamedIndividual ; rdfs:label "chicken salad" .
+:taipan a :GrabType, owl:NamedIndividual ; rdfs:label "taipan" .
+:canadianBacon a :GrabType, owl:NamedIndividual ; rdfs:label "canadian bacon" .
+:crailGrab a :GrabType, owl:NamedIndividual ; rdfs:label "crail grab" .
+:doubleGrab a :GrabType, owl:NamedIndividual ; rdfs:label "double grab" .
+
+# --- GrabStyle ---
+
+:GrabStyle a owl:Class ;
+    rdfs:label "GrabStyle" ;
+    owl:oneOf ( :nosebone :tucknee :tailbone :stiffy :stinkbug :tweak ) .
+
+:nosebone a :GrabStyle, owl:NamedIndividual ; rdfs:label "nosebone" .
+:tucknee a :GrabStyle, owl:NamedIndividual ; rdfs:label "tucknee" .
+:tailbone a :GrabStyle, owl:NamedIndividual ; rdfs:label "tailbone" .
+:stiffy a :GrabStyle, owl:NamedIndividual ; rdfs:label "stiffy" .
+:stinkbug a :GrabStyle, owl:NamedIndividual ; rdfs:label "stinkbug" .
+:tweak a :GrabStyle, owl:NamedIndividual ; rdfs:label "tweak" .
+
+# --- FlipType ---
+
+:FlipType a owl:Class ;
+    rdfs:label "FlipType" ;
+    owl:oneOf ( :kickflipType :heelflipType :hardflipType :fingerflipType
+                :pressureflipType :backfootFlip :underflip ) .
+
+:kickflipType a :FlipType, owl:NamedIndividual ; rdfs:label "kickflip" .
+:heelflipType a :FlipType, owl:NamedIndividual ; rdfs:label "heelflip" .
+:hardflipType a :FlipType, owl:NamedIndividual ; rdfs:label "hardflip" .
+:fingerflipType a :FlipType, owl:NamedIndividual ; rdfs:label "fingerflip" .
+:pressureflipType a :FlipType, owl:NamedIndividual ; rdfs:label "pressureflip" .
+:backfootFlip a :FlipType, owl:NamedIndividual ; rdfs:label "backfootFlip" .
+:underflip a :FlipType, owl:NamedIndividual ; rdfs:label "underflip" .
+
+# --- GrindType ---
+
+:GrindType a owl:Class ;
+    rdfs:label "GrindType" ;
+    owl:oneOf ( :fiftyFifty :fiveO :nosegrind :smithgrind :crookedGrindType
+                :feebleGrind :willyGrind :losiGrind :barleyGrind :saladGrind
+                :laybackGrind :hurricane :sugarcane ) .
+
+:fiftyFifty a :GrindType, owl:NamedIndividual ; rdfs:label "fifty-fifty" .
+:fiveO a :GrindType, owl:NamedIndividual ; rdfs:label "five-0" .
+:nosegrind a :GrindType, owl:NamedIndividual ; rdfs:label "nosegrind" .
+:smithgrind a :GrindType, owl:NamedIndividual ; rdfs:label "smithgrind" .
+:crookedGrindType a :GrindType, owl:NamedIndividual ; rdfs:label "crooked grind" .
+:feebleGrind a :GrindType, owl:NamedIndividual ; rdfs:label "feeble grind" .
+:willyGrind a :GrindType, owl:NamedIndividual ; rdfs:label "willy grind" .
+:losiGrind a :GrindType, owl:NamedIndividual ; rdfs:label "losi grind" .
+:barleyGrind a :GrindType, owl:NamedIndividual ; rdfs:label "barley grind" .
+:saladGrind a :GrindType, owl:NamedIndividual ; rdfs:label "salad grind" .
+:laybackGrind a :GrindType, owl:NamedIndividual ; rdfs:label "layback grind" .
+:hurricane a :GrindType, owl:NamedIndividual ; rdfs:label "hurricane" .
+:sugarcane a :GrindType, owl:NamedIndividual ; rdfs:label "sugarcane" .
+
+# --- SlideType ---
+
+:SlideType a owl:Class ;
+    rdfs:label "SlideType" ;
+    owl:oneOf ( :boardslide :noseslide :tailslide :lipslide :bluntslide
+                :nosebluntslide :darkslide :crailslide :primoslide ) .
+
+:boardslide a :SlideType, owl:NamedIndividual ; rdfs:label "boardslide" .
+:noseslide a :SlideType, owl:NamedIndividual ; rdfs:label "noseslide" .
+:tailslide a :SlideType, owl:NamedIndividual ; rdfs:label "tailslide" .
+:lipslide a :SlideType, owl:NamedIndividual ; rdfs:label "lipslide" .
+:bluntslide a :SlideType, owl:NamedIndividual ; rdfs:label "bluntslide" .
+:nosebluntslide a :SlideType, owl:NamedIndividual ; rdfs:label "nosebluntslide" .
+:darkslide a :SlideType, owl:NamedIndividual ; rdfs:label "darkslide" .
+:crailslide a :SlideType, owl:NamedIndividual ; rdfs:label "crailslide" .
+:primoslide a :SlideType, owl:NamedIndividual ; rdfs:label "primoslide" .
+
+# --- BoardOrientation ---
+
+:BoardOrientation a owl:Class ;
+    rdfs:label "BoardOrientation" ;
+    owl:oneOf ( :normalOrientation :inverted :edge ) .
+
+:normalOrientation a :BoardOrientation, owl:NamedIndividual ; rdfs:label "normal" .
+:inverted a :BoardOrientation, owl:NamedIndividual ; rdfs:label "inverted" .
+:edge a :BoardOrientation, owl:NamedIndividual ; rdfs:label "edge" .
+
+# --- FlatlandType ---
+
+:FlatlandType a owl:Class ;
+    rdfs:label "FlatlandType" ;
+    owl:oneOf ( :primo :casper :streetplant :hippieJump :stepOff :noComply ) .
+
+:primo a :FlatlandType, owl:NamedIndividual ; rdfs:label "primo" .
+:casper a :FlatlandType, owl:NamedIndividual ; rdfs:label "casper" .
+:streetplant a :FlatlandType, owl:NamedIndividual ; rdfs:label "streetplant" .
+:hippieJump a :FlatlandType, owl:NamedIndividual ; rdfs:label "hippie jump" .
+:stepOff a :FlatlandType, owl:NamedIndividual ; rdfs:label "step off" .
+:noComply a :FlatlandType, owl:NamedIndividual ; rdfs:label "no comply" .
+
+# --- HandplantType ---
+
+:HandplantType a owl:Class ;
+    rdfs:label "HandplantType" ;
+    owl:oneOf ( :invert :andrecht :eggplant :goodBuddy :laybackAir
+                :millerflip :sadplant ) .
+
+:invert a :HandplantType, owl:NamedIndividual ; rdfs:label "invert" .
+:andrecht a :HandplantType, owl:NamedIndividual ; rdfs:label "andrecht" .
+:eggplant a :HandplantType, owl:NamedIndividual ; rdfs:label "eggplant" .
+:goodBuddy a :HandplantType, owl:NamedIndividual ; rdfs:label "good buddy" ;
+    rdfs:comment "Fakie eggplant." .
+:laybackAir a :HandplantType, owl:NamedIndividual ; rdfs:label "layback air" .
+:millerflip a :HandplantType, owl:NamedIndividual ; rdfs:label "millerflip" .
+:sadplant a :HandplantType, owl:NamedIndividual ; rdfs:label "sadplant" ;
+    rdfs:comment "Jeff Grosso: a sad plant is straightening the front leg while tucking the back leg, grabbing the board." .
+
+# --- FootplantType ---
+# NOTE: 'boneless' collides with the Trick individual :boneless, so the
+# enum value carries a Footplant suffix (same pattern as the Ollie problem).
+
+:FootplantType a owl:Class ;
+    rdfs:label "FootplantType" ;
+    owl:oneOf ( :bonelessFootplant :beanPlant :fastPlant :texasPlant
+                :icePlant :sweeper ) .
+
+:bonelessFootplant a :FootplantType, owl:NamedIndividual ; rdfs:label "boneless" .
+:beanPlant a :FootplantType, owl:NamedIndividual ; rdfs:label "bean plant" .
+:fastPlant a :FootplantType, owl:NamedIndividual ; rdfs:label "fast plant" .
+:texasPlant a :FootplantType, owl:NamedIndividual ; rdfs:label "texas plant" ;
+    rdfs:comment "A front mute (weedle) bean plant with a tail grab." .
+:icePlant a :FootplantType, owl:NamedIndividual ; rdfs:label "ice plant" ;
+    rdfs:comment "A frontside bean plant." .
+:sweeper a :FootplantType, owl:NamedIndividual ; rdfs:label "sweeper" .
+
+# --- CurbAndLiptrickType ---
+
+:CurbAndLiptrickType a owl:Class ;
+    rdfs:label "CurbAndLiptrickType" ;
+    owl:oneOf ( :axleStall :fiveOStall :rocknRoll :smithStall :noseStall
+                :tailStall :nosepick :pivot :stapleGun :disaster :zingZing
+                :tailBlock :blunt :noseblunt ) .
+
+:axleStall a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "axle stall" .
+:fiveOStall a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "five-o stall" .
+:rocknRoll a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "rock'n roll" .
+:smithStall a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "smith stall" .
+:noseStall a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "nose stall" .
+:tailStall a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "tail stall" .
+:nosepick a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "nosepick" .
+:pivot a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "pivot" .
+:stapleGun a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "staple gun" .
+:disaster a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "disaster" .
+:zingZing a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "zing zing" .
+:tailBlock a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "tail block" .
+:blunt a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "blunt" .
+:noseblunt a :CurbAndLiptrickType, owl:NamedIndividual ; rdfs:label "noseblunt" .
+
+# --- ManualType ---
+
+:ManualType a owl:Class ;
+    rdfs:label "ManualType" ;
+    owl:oneOf ( :manualType :noseManualType :oneWheelManual :oneWheelNoseManual ) .
+
+:manualType a :ManualType, owl:NamedIndividual ; rdfs:label "manual" .
+:noseManualType a :ManualType, owl:NamedIndividual ; rdfs:label "nose manual" .
+:oneWheelManual a :ManualType, owl:NamedIndividual ; rdfs:label "one wheel manual" .
+:oneWheelNoseManual a :ManualType, owl:NamedIndividual ; rdfs:label "one wheel nose manual" .
+
+# --- ShoveItType ---
+
+:ShoveItType a owl:Class ;
+    rdfs:label "ShoveItType" ;
+    owl:oneOf ( :shoveIt :popShoveIt ) .
+
+:shoveIt a :ShoveItType, owl:NamedIndividual ; rdfs:label "shove-it" .
+:popShoveIt a :ShoveItType, owl:NamedIndividual ; rdfs:label "pop shove-it" .
+
+# ===========================================================================
+# CORE CLASSES
+# ===========================================================================
+
+# --- Skater ---
+
+:Skater a owl:Class ;
+    rdfs:label "Skater" ;
+    skos:definition "A person who skateboards. Referenced by tricks for attribution." .
+
+# --- Spin ---
+
+:Spin a owl:Class ;
+    rdfs:label "Spin" ;
+    skos:definition "A rotation, characterised by its magnitude (degrees) and its direction (backside/frontside/none). Used for both skater body rotation and board rotation." ;
+    rdfs:subClassOf
+        [ a owl:Restriction ; owl:onProperty :degrees ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+        [ a owl:Restriction ; owl:onProperty :direction ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] .
+
+# --- Trick ---
+# UML multiplicities: name [1], popularName [*], approachDirection [1],
+# skaterSpin [0..1], boardspin [0..1], inventedBy [0..1], firstMakeBy [0..1],
+# takeOffType [0..1], landingType [0..1], terrain [1], difficulty [1],
+# trickHistory [1].
+# Max-cardinalities enforced below; min-cardinalities documented only
+# (to be enforced with SHACL).
+
+:Trick a owl:Class ;
+    rdfs:label "Trick" ;
+    skos:definition "A skateboarding trick as an abstract, named concept - independent of any particular execution of it." ;
+    rdfs:subClassOf
+        [ a owl:Restriction ; owl:onProperty :approachDirection ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+        [ a owl:Restriction ; owl:onProperty :skaterSpin ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+        [ a owl:Restriction ; owl:onProperty :boardspin ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+        [ a owl:Restriction ; owl:onProperty :inventedBy ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+        [ a owl:Restriction ; owl:onProperty :firstMakeBy ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+        [ a owl:Restriction ; owl:onProperty :takeOffType ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+        [ a owl:Restriction ; owl:onProperty :landingType ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+        [ a owl:Restriction ; owl:onProperty :terrain ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+        [ a owl:Restriction ; owl:onProperty :difficulty ; owl:maxCardinality "1"^^xsd:nonNegativeInteger ] .
+
+# --- Trick subclasses (trick families) ---
+
+:Airtrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "Airtrick" ;
+    skos:definition "A trick performed in the air, typically on transition." .
+
+:Grabtrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "Grabtrick" ;
+    skos:definition "A trick where a hand grabs the board." .
+
+:Fliptrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "Fliptrick" ;
+    skos:definition "A trick where the board rotates around its long axis." .
+
+:Grindtrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "Grindtrick" ;
+    skos:definition "A trick where one or both trucks grind on an obstacle." .
+
+:SlideTrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "SlideTrick" ;
+    skos:definition "A trick where the deck slides on an obstacle." .
+
+:FlatlandTrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "FlatlandTrick" ;
+    skos:definition "A trick belonging to the flatland/freestyle family." .
+
+:HandplantTrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "HandplantTrick" ;
+    skos:definition "A trick where a hand is planted on the obstacle or ground." .
+
+:FootplantTrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "FootplantTrick" ;
+    skos:definition "A trick where a foot is planted on the obstacle or ground." .
+
+:CurbAndLiptrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "CurbAndLiptrick" ;
+    skos:definition "A stall or lip trick on a curb, ledge or coping." .
+
+:ManualTrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "ManualTrick" ;
+    skos:definition "A balance trick on two (or one) wheels." .
+
+:ShoveItTrick a owl:Class ;
+    rdfs:subClassOf :Trick ;
+    rdfs:label "ShoveItTrick" ;
+    skos:definition "A trick where the board rotates around its vertical axis without flipping." .
+
+# --- CompositeTrick ---
+# UML: CompositeTrick aggregates * Trick via role +trickComponent.
+# A composite needs at least two components to be composite.
+# NOTE: the UML shows 0..1 on the aggregate end (a Trick belongs to at
+# most one CompositeTrick). That constraint is NOT carried over, since a
+# base trick (e.g. kickflip) is a component of many composites.
+
+:CompositeTrick a owl:Class ;
+    rdfs:subClassOf :Trick ,
+        [ a owl:Restriction ; owl:onProperty :trickComponent ; owl:minCardinality "2"^^xsd:nonNegativeInteger ] ;
+    rdfs:label "CompositeTrick" ;
+    skos:definition "A trick composed of two or more component tricks, performed as one." .
+
+# ===========================================================================
+# OBJECT PROPERTIES
+# ===========================================================================
+
+:approachDirection a owl:ObjectProperty ;
+    rdfs:domain :Trick ; rdfs:range :Direction ;
+    rdfs:label "approachDirection" .
+
+:skaterSpin a owl:ObjectProperty ;
+    rdfs:domain :Trick ; rdfs:range :Spin ;
+    rdfs:label "skaterSpin" ;
+    rdfs:comment "Body rotation of the skater during the trick." .
+
+:boardspin a owl:ObjectProperty ;
+    rdfs:domain :Trick ; rdfs:range :Spin ;
+    rdfs:label "boardspin" ;
+    rdfs:comment "Rotation of the board around its vertical axis during the trick." .
+
+:inventedBy a owl:ObjectProperty ;
+    rdfs:domain :Trick ; rdfs:range :Skater ;
+    rdfs:label "inventedBy" .
+
+:firstMakeBy a owl:ObjectProperty ;
+    rdfs:domain :Trick ; rdfs:range :Skater ;
+    rdfs:label "firstMakeBy" ;
+    rdfs:comment "The skater who first landed (made) the trick, when distinct from the inventor." .
+
+:takeOffType a owl:ObjectProperty ;
+    rdfs:domain :Trick ; rdfs:range :TakeOffType ;
+    rdfs:label "takeOffType" .
+
+:landingType a owl:ObjectProperty ;
+    rdfs:domain :Trick ; rdfs:range :RollAwayDirection ;
+    rdfs:label "landingType" ;
+    rdfs:comment "Exit travel of the trick. Property name retained from the UML attribute; the range class is RollAwayDirection." .
+
+:terrain a owl:ObjectProperty ;
+    rdfs:domain :Trick ; rdfs:range :TerrainType ;
+    rdfs:label "terrain" .
+
+:difficulty a owl:ObjectProperty ;
+    rdfs:domain :Trick ; rdfs:range :DifficultyLevel ;
+    rdfs:label "difficulty" .
+
+:trickComponent a owl:ObjectProperty ;
+    rdfs:domain :CompositeTrick ; rdfs:range :Trick ;
+    rdfs:label "trickComponent" .
+
+:degrees a owl:ObjectProperty ;
+    rdfs:domain :Spin ; rdfs:range :DegreesOfSpin ;
+    rdfs:label "degrees" .
+
+:direction a owl:ObjectProperty ;
+    rdfs:domain :Spin ; rdfs:range :Direction ;
+    rdfs:label "direction" .
+
+:typeOfAir a owl:ObjectProperty ;
+    rdfs:domain :Airtrick ; rdfs:range :AirType ;
+    rdfs:label "typeOfAir" .
+
+:travelDirection a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( :Airtrick :Grindtrick :SlideTrick ) ] ;
+    rdfs:range :TravelDirection ;
+    rdfs:label "travelDirection" ;
+    rdfs:comment "Shared by Airtrick, Grindtrick and SlideTrick. The UML has 'hasTravelDirection' on SlideTrick; normalised to one property here." .
+
+:typeOfGrab a owl:ObjectProperty ;
+    rdfs:domain :Grabtrick ; rdfs:range :GrabType ;
+    rdfs:label "typeOfGrab" .
+
+:grabstyle a owl:ObjectProperty ;
+    rdfs:domain :Grabtrick ; rdfs:range :GrabStyle ;
+    rdfs:label "grabstyle" .
+
+:flipType a owl:ObjectProperty ;
+    rdfs:domain :Fliptrick ; rdfs:range :FlipType ;
+    rdfs:label "flipType" .
+
+:typeOfGrind a owl:ObjectProperty ;
+    rdfs:domain :Grindtrick ; rdfs:range :GrindType ;
+    rdfs:label "typeOfGrind" .
+
+:typeOfSlide a owl:ObjectProperty ;
+    rdfs:domain :SlideTrick ; rdfs:range :SlideType ;
+    rdfs:label "typeOfSlide" .
+
+:boardOrientation a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( :SlideTrick :FlatlandTrick ) ] ;
+    rdfs:range :BoardOrientation ;
+    rdfs:label "boardOrientation" .
+
+:typeOfFlatlandTrick a owl:ObjectProperty ;
+    rdfs:domain :FlatlandTrick ; rdfs:range :FlatlandType ;
+    rdfs:label "typeOfFlatlandTrick" .
+
+:typeOfHandplant a owl:ObjectProperty ;
+    rdfs:domain :HandplantTrick ; rdfs:range :HandplantType ;
+    rdfs:label "typeOfHandplant" .
+
+:typeOfFootplant a owl:ObjectProperty ;
+    rdfs:domain :FootplantTrick ; rdfs:range :FootplantType ;
+    rdfs:label "typeOfFootplant" .
+
+:typeOfCurbAndLiptrick a owl:ObjectProperty ;
+    rdfs:domain :CurbAndLiptrick ; rdfs:range :CurbAndLiptrickType ;
+    rdfs:label "typeOfCurbAndLiptrick" .
+
+:typeOfManual a owl:ObjectProperty ;
+    rdfs:domain :ManualTrick ; rdfs:range :ManualType ;
+    rdfs:label "typeOfManual" .
+
+:typeOfShoveIt a owl:ObjectProperty ;
+    rdfs:domain :ShoveItTrick ; rdfs:range :ShoveItType ;
+    rdfs:label "typeOfShoveIt" .
+
+# ===========================================================================
+# DATATYPE PROPERTIES
+# ===========================================================================
+
+:name a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( :Trick :Skater ) ] ;
+    rdfs:range xsd:string ;
+    rdfs:label "name" .
+
+:popularName a owl:DatatypeProperty ;
+    rdfs:domain :Trick ; rdfs:range xsd:string ;
+    rdfs:label "popularName" ;
+    rdfs:comment "Colloquial names; a trick can have several (0..*)." .
+
+:trickHistory a owl:DatatypeProperty ;
+    rdfs:domain :Trick ; rdfs:range xsd:string ;
+    rdfs:label "trickHistory" ;
+    rdfs:comment "Free-text history: who invented, popularised, named the trick, and other lore." .
+
+:boardflipCount a owl:DatatypeProperty ;
+    rdfs:domain :Fliptrick ; rdfs:range xsd:integer ;
+    rdfs:label "boardflipCount" ;
+    rdfs:comment "Number of full board flips (1 = single, 2 = double, ...)." .
+
+:country a owl:DatatypeProperty ;
+    rdfs:domain :Skater ; rdfs:range xsd:string ;
+    rdfs:label "country" .
+
+:state a owl:DatatypeProperty ;
+    rdfs:domain :Skater ; rdfs:range xsd:string ;
+    rdfs:label "state" .
+
+:fromCity a owl:DatatypeProperty ;
+    rdfs:domain :Skater ; rdfs:range xsd:string ;
+    rdfs:label "fromCity" .
+
+:livesInCity a owl:DatatypeProperty ;
+    rdfs:domain :Skater ; rdfs:range xsd:string ;
+    rdfs:label "livesInCity" .
+
+# ===========================================================================
+# INDIVIDUALS - SPINS (reusable)
+# ===========================================================================
+
+:spin180Backside a :Spin, owl:NamedIndividual ;
+    rdfs:label "180 backside" ;
+    :degrees :degrees180 ; :direction :backside .
+
+:spin180Frontside a :Spin, owl:NamedIndividual ;
+    rdfs:label "180 frontside" ;
+    :degrees :degrees180 ; :direction :frontside .
+
+:spin360Backside a :Spin, owl:NamedIndividual ;
+    rdfs:label "360 backside" ;
+    :degrees :degrees360 ; :direction :backside .
+
+:spin540Backside a :Spin, owl:NamedIndividual ;
+    rdfs:label "540 backside" ;
+    :degrees :degrees540 ; :direction :backside .
+
+:spin720Backside a :Spin, owl:NamedIndividual ;
+    rdfs:label "720 backside" ;
+    :degrees :degrees720 ; :direction :backside .
+
+# ===========================================================================
+# INDIVIDUALS - SKATERS
+# ===========================================================================
+
+:alanGelfand a :Skater, owl:NamedIndividual ;
+    :name "Alan Gelfand" ; :country "USA" ; :state "Florida" .
+
+:rodneyMullen a :Skater, owl:NamedIndividual ;
+    :name "Rodney Mullen" ; :country "USA" ; :state "Florida" .
+
+:tonyHawk a :Skater, owl:NamedIndividual ;
+    :name "Tony Hawk" ; :country "USA" ; :state "California" .
+
+:mikeMcGill a :Skater, owl:NamedIndividual ;
+    :name "Mike McGill" ; :country "USA" ; :state "Florida" .
+
+# ===========================================================================
+# INDIVIDUALS - TRICKS
+# ===========================================================================
+
+# --- Basics ---
+
+:ollie a :Trick, owl:NamedIndividual ;
+    :name "Ollie" ;
+    :inventedBy :alanGelfand ;
+    :takeOffType :ollieTakeOff ;
+    :landingType :normalRollAway ;
+    :difficulty :basic ;
+    :trickHistory "Invented by Alan 'Ollie' Gelfand in 1978 on Florida vert; Rodney Mullen adapted it to flatground in 1982. The Ollie problem: this trick is also the takeoff type of most other tricks (see :ollieTakeOff)." .
+
+:kickflip a :Fliptrick, owl:NamedIndividual ;
+    :name "Kickflip" ;
+    :inventedBy :rodneyMullen ;
+    :flipType :kickflipType ;
+    :boardflipCount 1 ;
+    :takeOffType :ollieTakeOff ;
+    :landingType :normalRollAway ;
+    :difficulty :basic ;
+    :trickHistory "Modern flatground kickflip invented by Rodney Mullen in 1983. An earlier no-ollie version ('magic flip') existed in 1970s freestyle." .
+
+:backsideKickflip a :Fliptrick, owl:NamedIndividual ;
+    :name "Backside Kickflip" ;
+    :flipType :kickflipType ;
+    :boardflipCount 1 ;
+    :skaterSpin :spin180Backside ;
+    :takeOffType :ollieTakeOff ;
+    :landingType :fakieRollAway ;
+    :difficulty :intermediate .
+
+:treFlip a :Fliptrick, owl:NamedIndividual ;
+    :name "360 Kickflip" ;
+    :popularName "Tre Flip" , "3 Flip" ;
+    :inventedBy :rodneyMullen ;
+    :flipType :kickflipType ;
+    :boardflipCount 1 ;
+    :boardspin :spin360Backside ;
+    :takeOffType :ollieTakeOff ;
+    :landingType :normalRollAway ;
+    :difficulty :advanced .
+
+:switchFrontsideOllie a :Trick, owl:NamedIndividual ;
+    :name "Switch Frontside Ollie" ;
+    :skaterSpin :spin180Frontside ;
+    :takeOffType :ollieTakeOff ;
+    :difficulty :advanced ;
+    :trickHistory "Performed in switch stance. NOTE: stance (switch/nollie-stance vs natural) is not yet representable as a Trick property in this model - captured in prose here pending a modelling decision." .
+
+# --- Airs ---
+
+:backsideAir a :Airtrick, owl:NamedIndividual ;
+    :name "Backside Air" ;
+    :typeOfAir :backsideAirType ;
+    :approachDirection :backside ;
+    :terrain :transition ;
+    :difficulty :intermediate .
+
+:frontsideAir a :Airtrick, owl:NamedIndividual ;
+    :name "Frontside Air" ;
+    :typeOfAir :frontsideAirType ;
+    :approachDirection :frontside ;
+    :terrain :transition ;
+    :difficulty :intermediate .
+
+:frigidAir a :Airtrick, owl:NamedIndividual ;
+    :name "Frigid Air" ;
+    :typeOfAir :frigidAirType ;
+    :terrain :transition ;
+    :difficulty :advanced ;
+    :trickHistory "A one-footed air where the front foot kicks out on the heel side (judo air kicks out on the toe side)." .
+
+:mcTwist a :Airtrick, owl:NamedIndividual ;
+    :name "McTwist" ;
+    :typeOfAir :mctwistType ;
+    :skaterSpin :spin540Backside ;
+    :inventedBy :mikeMcGill ;
+    :terrain :transition ;
+    :difficulty :pro ;
+    :trickHistory "Invented by Mike McGill in 1984: an inverted backside 540 with a weedle (mute) grab." .
+
+:sevenTwenty a :Airtrick, owl:NamedIndividual ;
+    :name "720" ;
+    :typeOfAir :airType ;
+    :skaterSpin :spin720Backside ;
+    :firstMakeBy :tonyHawk ;
+    :terrain :transition ;
+    :difficulty :pro ;
+    :trickHistory "First landed by Tony Hawk in 1985." .
+
+:madonna a :Airtrick, owl:NamedIndividual ;
+    :name "Madonna" ;
+    :typeOfAir :lienAir ;
+    :terrain :transition ;
+    :difficulty :advanced ;
+    :inventedBy :tonyHawk ;
+    :trickHistory "A lien air where the front foot comes off and the tail smacks the coping on re-entry. Invented by Tony Hawk. The Backside Madonna variant is credited to Sean Penn (the skater)." .
+
+:bodyJar a :Airtrick, owl:NamedIndividual ;
+    :name "Body Jar" ;
+    :typeOfAir :backsideAirType ;
+    :terrain :transition ;
+    :difficulty :advanced ;
+    :trickHistory "A backside air where the tail jars against the coping on the way back in." .
+
+# --- Grinds ---
+
+:smithGrind a :Grindtrick, owl:NamedIndividual ;
+    :name "Smith Grind" ;
+    :typeOfGrind :smithgrind ;
+    :difficulty :intermediate ;
+    :trickHistory "Named after Mike Smith. Back truck grinds while the front truck points down on the near side." .
+
+:crookedGrind a :Grindtrick, owl:NamedIndividual ;
+    :name "Crooked Grind" ;
+    :popularName "Crooks" , "K-Grind" ;
+    :typeOfGrind :crookedGrindType ;
+    :difficulty :intermediate ;
+    :trickHistory "Front truck grinds at an angle with the nose over the obstacle. Popularised in the early 1990s; associated with Eric Koston (K-grind) and Dan Peterka." .
+
+:montyGrind a :Grindtrick, owl:NamedIndividual ;
+    :name "Monty Grind" ;
+    :difficulty :advanced ;
+    :trickHistory "PLACEHOLDER: no GrindType value exists for this trick yet - the GrindType enumeration in the UML model needs a corresponding value before typeOfGrind can be asserted." .
+
+# --- Slides ---
+
+:backsideTailslide a :SlideTrick, owl:NamedIndividual ;
+    :name "Backside Tailslide" ;
+    :typeOfSlide :tailslide ;
+    :approachDirection :backside ;
+    :boardOrientation :normalOrientation ;
+    :difficulty :advanced .
+
+# --- Footplants ---
+
+:boneless a :FootplantTrick, owl:NamedIndividual ;
+    :name "Boneless" ;
+    :typeOfFootplant :bonelessFootplant ;
+    :takeOffType :bonelessTakeOff ;
+    :difficulty :basic ;
+    :trickHistory "Front foot steps off, hand grabs the board, back foot pops. One of the concepts that is both a trick and a takeoff type (see the Ollie problem)." .
+
+# --- Manuals (component for composites) ---
+
+:noseManual a :ManualTrick, owl:NamedIndividual ;
+    :name "Nose Manual" ;
+    :typeOfManual :noseManualType ;
+    :difficulty :intermediate .
+
+# --- Flip component for composite (nollie backside heelflip) ---
+
+:nollieBacksideHeelflip a :Fliptrick, owl:NamedIndividual ;
+    :name "Nollie Backside Heelflip" ;
+    :flipType :heelflipType ;
+    :boardflipCount 1 ;
+    :skaterSpin :spin180Backside ;
+    :takeOffType :nollieTakeOff ;
+    :difficulty :advanced .
+
+# --- Grab component for composite (nose grab) ---
+
+:noseGrab a :Grabtrick, owl:NamedIndividual ;
+    :name "Nose Grab" ;
+    :typeOfGrab :nosegrab ;
+    :difficulty :basic .
+
+# ===========================================================================
+# INDIVIDUALS - COMPOSITE TRICKS
+# ===========================================================================
+
+:kickflipNoseManual a :CompositeTrick, owl:NamedIndividual ;
+    :name "Kickflip Nose Manual" ;
+    :trickComponent :kickflip , :noseManual ;
+    :difficulty :advanced .
+
+:nollieBacksideHeelflipTailslide a :CompositeTrick, owl:NamedIndividual ;
+    :name "Nollie Backside Heelflip Tailslide" ;
+    :trickComponent :nollieBacksideHeelflip , :backsideTailslide ;
+    :difficulty :pro .
+
+:oneFootFrontsideAirNoseGrabToTail a :CompositeTrick, owl:NamedIndividual ;
+    :name "One-Foot Frontside Air Nose Grab to Tail" ;
+    :trickComponent :frontsideAir , :noseGrab ;
+    :terrain :transition ;
+    :difficulty :advanced ;
+    :trickHistory "NOTE: the one-foot styling and the to-tail ending are not representable as structured properties in the current model - the UML notes on styling components (nosebone, one-foot, to-tail endings) apply here." .
