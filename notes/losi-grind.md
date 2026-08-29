@@ -5,7 +5,7 @@ aliases: []
 type: Trick
 tags:
   - allen-losi
-  - grindTrick
+  - GrindTrick
   - Trick
 inventedYear: 1980s
 inventor: allen-losi
