@@ -4,9 +4,9 @@ label: ""                  # current name = skos:prefLabel
 aliases: []                # former/alternative names = skos:altLabel
 type: trick                # trick | trickType | property | enumValue | concept
 tags: []                   # use the ontology classes' local names, e.g. grabTrick
-invented:                  # year (approx. is fine, note uncertainty in prose)
-inventor: ""
-popularized-by: []
+inventedYear:""            # year (approx. is fine, note uncertainty in prose)
+inventor: ""	  	   # the skater that invented the trick
+popularized-by: [] 	   # who made the trick Popular
 origin: ""                 # place/scene
 status: research           # research | draft | mature | in-ontology
 confidence: low            # low | medium | high — strength of sources
@@ -20,6 +20,9 @@ Briefly, what the trick/concept is.
 
 ## History
 Origin, name changes, evolution over time. With sources.
+
+## Popular text 
+curated text describing the the trick. 
 
 ## Open questions
 - [ ]
