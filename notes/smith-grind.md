@@ -1,14 +1,17 @@
 ---
 iri: :SmithGrind
-label: Smith Grind
+label: Smith grind
 aliases: []
 type: Trick
 tags:
-  - grindTrick
-  - trick
-invented: 1980
+  - GrindTrick
+  - Trick
+inventedYear: 1980
 inventor: Mike Smith
-popularized-by: []
+popularized-by:
+  - [[mike-smith | Mike Smith]]
+  - [[monty-nolder | Monty Nolder]]
+
 origin: Californian vert/park scene, early 1980s
 status: in-ontology
 confidence: high
