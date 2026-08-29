@@ -6,18 +6,19 @@ type: Trick
 tags:
   - allen-losi
   - grindTrick
-  - trick
+  - Trick
 inventedYear: 1980s
 inventor: allen-losi
 popularized-by: [allen-losi]
-origin: ""
+origin: "Californian vert/park scene, early 1980s"
 status: draft
 confidence: high
 sources: []
 ---
 
-# Title (current name)
-Losi grind
+# Title 
+Losi Grind
+
 ## Description
 grind on your front truck while your back truck hangs over the opposite side of the ledge or rail. Kind of an front truck feeble grind
 
@@ -27,7 +28,7 @@ Done first and named after Legendary skater Allen Losi. Invented late 1980s?
 Sometimes called an over-willy or nose feeble
 
 ## Popular text 
-curated text describing the the trick. 
+curated text describing the trick. 
 
 ## Open questions
 
