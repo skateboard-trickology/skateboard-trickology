@@ -5,6 +5,7 @@ aliases: []
 type: Trick
 tags:
   - grindTrick
+  - trick
 invented: 1980
 inventor: Mike Smith
 popularized-by: []
@@ -14,6 +15,7 @@ confidence: high
 sources: []
 ---
 
+# Title (current name)
 Smith grind
 
 ## Description
@@ -21,6 +23,9 @@ grind on coping, ledge or rail on your back truck while your front truck dips do
 
 ## History
 Frontside version invented by Mike Smith in the eighties. Monty Nolder was the first to do a backside smith grind, named Monty grind. 
+
+## Popular text 
+curated text describing the trick. 
 
 ## Open questions
 - [ ]
