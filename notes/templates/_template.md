@@ -10,6 +10,7 @@ firstMakeBy: ""            # the skater that did the trick first, like 1260 by M
 namedAfter: ""             # Monty grind named after Monty Nolder
 popularizedBy: [] 	       # who made the trick Popular
 origin: ""                 # origin place og scene
+difficulty: ""             # basic | intermediate | advances
 noteStatus: research       # research | draft | mature | in-ontology
 reviewStatus: unreviewed   # unreviewed | inreview | verified | disputed
 reviewedBy : ""            # Source 
