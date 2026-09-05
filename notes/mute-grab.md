@@ -22,7 +22,7 @@ sources:
 ---
 
 ## Title
-Weddle grab
+Frigid Air
 
 ## Description
 Grab where the front hand grips the toeside edge of the board between the feet. 
