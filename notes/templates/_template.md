@@ -12,8 +12,8 @@ popularizedBy: [] 	       # who made the trick Popular
 origin: ""                 # origin place og scene
 noteStatus: research       # research | draft | mature | in-ontology
 reviewStatus: unreviewed   # unreviewed | inreview | verified | disputed
-reviwedBy : ""             # Source 
-reviwedDate : ""             # Source 
+reviewedBy : ""             # Source 
+reviewedDate : ""             # Source 
 confidence: low            # low | medium | high — strength of sources
 sources: []
 ---
