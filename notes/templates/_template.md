@@ -10,7 +10,7 @@ inventedBy: ""             # the skater that invented the trick
 firstMakeBy: ""            # the skater that landed it first, like the 1260 by Mitchie Brusco
 namedAfter: ""             # who or what the name points at, e.g. Monty grind -> Monty Nolder
 popularizedBy: []          # who made the trick popular
-origin: ""            # origin place or scene
+origin: ""                 # origin place or scene
 difficulty: ""             # basic | intermediate | advanced | pro
 noteStatus: research       # research | draft | mature | in-ontology, about this note
 reviewStatus: unreviewed   # unreviewed | inReview | verified | disputed
