@@ -1,42 +1,24 @@
 ---
-iri: :LocalName
-label: ""
-aliases: []
-type: trick
-tags: []
-inventedYear: ""
-inventor: ""
-firstMakeBy: ""
-namedAfter: ""
-popularizedBy: []
-origin: ""
-noteStatus: research
-reviewStatus: unreviewed
-reviewedBy: ""
-reviewedDate: ""
-confidence: low
-sources: []
+iri: ":LocalName"          # frozen at creation, never changes. PascalCase for
+                           # tricks and skaters, lowerCamelCase for enum values
+label: ""                  # current name -> rdfs:label / skos:prefLabel
+aliases: []                # former/alternative names -> skos:altLabel
+type: trick                # trick | compositeTrick | skater | enumValue | class | property | concept
+tags: []                   # ontology class local names, e.g. Grabtrick
+inventedYear: ""           # a single year, e.g. 1978. Anything vaguer goes in History
+inventedBy: ""             # the skater that invented the trick
+firstMakeBy: ""            # the skater that landed it first, like the 1260 by Mitchie Brusco
+namedAfter: ""             # who or what the name points at, e.g. Monty grind -> Monty Nolder
+popularizedBy: []          # who made the trick popular
+origin: ""            # origin place or scene
+difficulty: ""             # basic | intermediate | advanced | pro
+noteStatus: research       # research | draft | mature | in-ontology, about this note
+reviewStatus: unreviewed   # unreviewed | inReview | verified | disputed
+reviewedBy: []             # person who has reviewed the text and given a thumbs up
+reviewedDate: ""           # date of that review, YYYY-MM-DD
+confidence: low            # low | medium | high, strength of the sources
+sources: []                # URLs, articles, interviews
 ---
-
-# Title (current name)
-
-## Description
-A one-footed air where the front foot comes off the board and kicks out on the heel side, leg extended, while the board is held with a grab.
-
-## History
-Came out of the eighties vert and ramp scene as a variation on the judo air. No inventor or year has been established — none of the usual sources name one. The name is said to be a pun on Frigidaire, the refrigerator brand: an air trick where the foot is stretched out into the cold open air, the "frigid air". 
-
-## Curated text 
-The frigid air is the judo air's mirror image. Same idea — take the front foot off, straighten the leg, hold the board — but kicked out over the heel edge instead of the toe edge, which makes it read completely differently in the air.
-
-The name is a joke, and a good one. Air tricks are just called airs, so stretching a foot out into the cold gives you a frigid air, which is one space away from Frigidaire, the fridge company.
-
-## Open questions
-- [ ]
-
-## Ontology notes
-What this means for the model: class membership, enum values,
-candidates for skos:changeNote/historyNote, known collisions.
 
 # Title (current name)
 
@@ -47,7 +29,9 @@ Briefly, what the trick/concept is.
 Origin, name changes, evolution over time. With sources.
 
 ## Curated text 
-curated text describing the trick. 
+The public-facing text — what a reader gets beyond the bare definition.
+Written from Description and History, but as prose someone would actually
+want to read. Becomes dcterms:description.
 
 ## Open questions
 - [ ]
